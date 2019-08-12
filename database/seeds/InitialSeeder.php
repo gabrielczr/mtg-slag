@@ -34,33 +34,54 @@ class DatabaseSeeder extends Seeder {
 		]);
 
 		User::create([
-			'name' => 'TestAdmin',
+			'username' => 'TestAdmin',
 			'email' => 'gabriel.orbulescu@gmail.com',
 			'password' => bcrypt('admin'),
 			'role_id' => 1,
+			'confirmed' => true
 		]);
 
 		User::create([
-			'name' => 'TestRedactor',
+			'username' => 'TestRedactor',
 			'email' => 'gabriel.orbulescu@gmail.com',
 			'password' => bcrypt('redactor'),
 			'role_id' => 2,
+			'valid' => true,
+			'confirmed' => true
 		]);
 
 		User::create([
-			'name' => 'Steve',
+			'username' => 'Steve',
 			'email' => 'steve@steve.com',
 			'password' => bcrypt('steve'),
 			'role_id' => 3,
+			'confirmed' => true
 		]);
 
 		User::create([
-			'name' => 'Alexis',
+			'username' => 'Alexis',
 			'email' => 'alexis@alexis.com',
 			'password' => bcrypt('slacker'),
 			'role_id' => 3,
+			'confirmed' => true
 		]);
 
+
+		Tag::create([
+			'tag' => 'Tag1'
+		]);
+
+		Tag::create([
+			'tag' => 'Tag2'
+		]);
+
+		Tag::create([
+			'tag' => 'Tag3'
+		]);
+
+		Tag::create([
+			'tag' => 'Tag4'
+		]);
 
 		Post::create([
 			'title' => 'Post 1',

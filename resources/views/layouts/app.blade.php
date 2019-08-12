@@ -41,6 +41,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li><a class="nav-link" href="{{ '/news' }}">{{ __('News') }}</a></li>
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
