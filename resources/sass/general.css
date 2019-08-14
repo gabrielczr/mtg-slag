@@ -1,0 +1,12 @@
+#middleHeader {
+  height: 13rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+}
+
+#logo {
+  height: 10rem;
+}
+/*# sourceMappingURL=general.css.map */
