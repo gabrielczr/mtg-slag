@@ -13,7 +13,10 @@
     height: 4rem;
 
 }
-footer{background-color: black;height: 10rem;}
+
+//* FOOTER
+
+footer{background-color: #343a40;height: 10rem;}
 #footer{
     
     width: 70%;
@@ -21,9 +24,26 @@ footer{background-color: black;height: 10rem;}
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
+    
 }
 .footList{
     list-style: none;
     color: white;
     font-size: 0.8rem;
+    margin-top: 50px;
+    a{
+        color:lightgrey;
+    }
+}
+#social{
+    width: 25%;
+    margin-top: 3rem;
+    i{
+        color: rgb(163, 166, 179);
+        width: 15%;
+        size: 100px;
+        padding: 1rem;
+        font-size: 1.5rem;
+        
+    }
 }

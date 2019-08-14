@@ -19,6 +19,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Fontawesome-->
+    <script src="https://kit.fontawesome.com/1af7466343.js"></script>
 </head>
 
 <body>

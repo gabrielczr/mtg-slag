@@ -14,7 +14,7 @@
 }
 
 footer {
-  background-color: black;
+  background-color: #343a40;
   height: 10rem;
 }
 
@@ -30,5 +30,23 @@ footer {
   list-style: none;
   color: white;
   font-size: 0.8rem;
+  margin-top: 50px;
+}
+
+.footList a {
+  color: lightgrey;
+}
+
+#social {
+  width: 25%;
+  margin-top: 3rem;
+}
+
+#social i {
+  color: #a3a6b3;
+  width: 15%;
+  size: 100px;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 
