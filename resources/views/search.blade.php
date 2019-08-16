@@ -5,61 +5,63 @@
     <form action="" id='searchForm'>
         <!--card name-->
         <div class='select card-body'>
-        <label for="name" id='labelName'>Card name</label>
-        <input type="text" id='name'>
-        
-        <!--list of mana colors-->
-        <div id='colors'>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='white'>
+            <label for="name" id='labelName'>Card name</label>
+            <input type="text" id='name'>
+
+            <!--list of mana colors-->
+            <div id='colors'>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='white'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='black'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='blue'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='white'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='green'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                        <img src="" alt="">
+                        <input type="checkbox" name='colorless'>
+                    </div>
                 </div>
             </div>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='black'>
-                </div>
+            <div id='labelFoil'>
+                <label for="foil">Foil</label>
+                <input type="checkbox" name='foil'>
             </div>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='blue'>
-                </div>
+            <!-- Allow multicolor-->
+            <div id='multicolorLabel'>
+                <label>Show only multicolor </label>
+                <input type="checkbox" name='multicolor'>
             </div>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='white'>
-                </div>
+            <!-- Converted mana cost-->
+            <div id='cmc'>
+                <label for="cmc">Converted mana cost</label>
+                <input type="number" name='cmc'>
             </div>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='green'>
-                </div>
-            </div>
-            <div class='colorCheck'>
-                <div class='color'>
-                    <img src="" alt="">
-                    <input type="checkbox" name='colorless'>
-                </div>
-            </div>
-        </div><div id='labelFoil'>
-        <label for="foil">Foil</label>
-        <input type="checkbox" name='foil'>
         </div>
-        <!-- Allow multicolor-->
-        <div id='multicolorLabel'>
-        <label>Show only multicolor </label>
-        <input type="checkbox" name='multicolor'>
-    </div>
-        <!-- Converted mana cost-->
-        <div id='cmc'>
-        <label for="cmc">Converted mana cost</label>
-        <input type="number" name='cmc'>
-    </div></div>
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -148,6 +150,13 @@
             </div>
 
         </div>
+        <select name="orderBy" id="">
+            <option value="" selected="true" disabled="disabled" ></option>
+            <option value="orderConvertedDesc">Converted mana cost +/-</option>
+            <option value="orderConvertedAsc">Converted mana cost -/+</option>
+            <option value="orderAlphaDesc">Alphabetical z/a</option>
+            <option value="orderAlphaAsc">Alphabetical a/z</option>
+        </select>
     </form>
 
 </section>
