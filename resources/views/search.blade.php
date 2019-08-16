@@ -5,6 +5,18 @@
     <form action="" id='searchForm'>
         <!--card name-->
         <div class='select card-body'>
+            <p>Search cards</p>
+            <div class='select'>
+                <label for="orderBy">Order by</label>
+                <select name="orderBy" id="">
+
+                    <option value="" selected="true" disabled="disabled"></option>
+                    <option value="orderConvertedDesc">Converted mana cost +/-</option>
+                    <option value="orderConvertedAsc">Converted mana cost -/+</option>
+                    <option value="orderAlphaDesc">Alphabetical z/a</option>
+                    <option value="orderAlphaAsc">Alphabetical a/z</option>
+                </select>
+            </div>
             <label for="name" id='labelName'>Card name</label>
             <input type="text" id='name'>
 
@@ -150,13 +162,7 @@
             </div>
 
         </div>
-        <select name="orderBy" id="">
-            <option value="" selected="true" disabled="disabled" ></option>
-            <option value="orderConvertedDesc">Converted mana cost +/-</option>
-            <option value="orderConvertedAsc">Converted mana cost -/+</option>
-            <option value="orderAlphaDesc">Alphabetical z/a</option>
-            <option value="orderAlphaAsc">Alphabetical a/z</option>
-        </select>
+
     </form>
 
 </section>
