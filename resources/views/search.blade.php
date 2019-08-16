@@ -2,56 +2,64 @@
 
 @section('content')
 <section id='searchColumn'>
-    <form action="">
+    <form action="" id='searchForm'>
         <!--card name-->
-        <label for="name">Card name</label>
+        <div class='select card-body'>
+        <label for="name" id='labelName'>Card name</label>
         <input type="text" id='name'>
+        
         <!--list of mana colors-->
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='white'>
+        <div id='colors'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='white'>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='black'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='black'>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='blue'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='blue'>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='white'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='white'>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='green'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='green'>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='colorless'>
+            <div class='colorCheck'>
+                <div class='color'>
+                    <img src="" alt="">
+                    <input type="checkbox" name='colorless'>
+                </div>
             </div>
-        </div>
-
-        <label for="foil">foil</label>
+        </div><div id='labelFoil'>
+        <label for="foil">Foil</label>
         <input type="checkbox" name='foil'>
+        </div>
         <!-- Allow multicolor-->
+        <div id='multicolorLabel'>
         <label>Show only multicolor </label>
         <input type="checkbox" name='multicolor'>
+    </div>
         <!-- Converted mana cost-->
+        <div id='cmc'>
         <label for="cmc">Converted mana cost</label>
         <input type="number" name='cmc'>
+    </div></div>
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -73,9 +81,9 @@
                                 <option value="" selected="true" disabled="disabled"></option>
                                 <option name='common' value="Common"></option>
                                 <option value="uncommon">uncommon</option>
-                                <option value="rare" >rare</option>
-                                <option value="rare" >mythic rare</option>
-                                <option value="rare" >legendary</option>
+                                <option value="rare">rare</option>
+                                <option value="rare">mythic rare</option>
+                                <option value="rare">legendary</option>
                             </select>
                         </div>
 
@@ -143,3 +151,4 @@
     </form>
 
 </section>
+@endsection
