@@ -19,3 +19,33 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/news', 'BlogController');
+//Route::resource('/profile/', 'Profile/ProfileController');
+
+
+Route::group(
+    ['middleware' => "App\Http\Middleware\AdminMiddleware"],
+    function () {
+        Route::match(['get', 'post'], '/admin/', "HomeController@admin");
+    }
+);
+
+Route::group(
+    ['middleware' => "App\Http\Middleware\MemberMiddleware"],
+    function () {
+        Route::match(['get', 'post'], '/editor/', "HomeController@member");
+    }
+);
+
+Route::get('/dashboard', 'HomeController@index')->name('home');
+require __DIR__ . '/profile/profile.php';
+
+//Route::get('/profile.shows', 'App\UserController@view_post');
+Route::get('/profile/shows', 'BlogController@view_post');
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar');
+
+Route::get('/post/create', 'BlogController@create')->name('post.create');
+Route::post('/post/store', 'BlogController@store')->name('post.store');
+Route::get('/post/show/{id}', 'BlogController@show')->name('post.show');
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');

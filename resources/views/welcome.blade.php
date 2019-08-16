@@ -8,6 +8,7 @@
                 @if(Auth::check())
                 <!-- Table -->
                 <h2> Test to be seen by authenticated user</h2>
+
                 @endif
             </div>
             @if(Auth::guest())
@@ -16,4 +17,20 @@
         </div>
     </div>
 </div>
+@if(Auth::check())
+<div class='panel panel-default'>
+    You are logged in! as <strong>{{ strtoupper(Auth::user()->type) }}</strong>
+</div>
+@endif
+
+
+<div class='panel panel-default'>
+    Admin Page: <a href='{{ url('/') }}/admin'>{{ url('/') }}/admin</a>
+</div>
+
+
+<div class='panel panel-default'>
+    Member Page: <a href='{{ url('/') }}/editor'>{{ url('/') }}/editor</a>
+</div>
+
 @endsection

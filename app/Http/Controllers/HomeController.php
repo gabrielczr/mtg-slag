@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,21 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function admin(Request $req)
+    {
+        if (Auth::user()->type = 'admin')
+            return view('admin');
+        else
+            return view('middleware')->withMessage("Admin");
+    }
+    public function super_admin(Request $req)
+    {
+        return view('middleware')->withMessage("Super Admin");
+    }
+    public function member(Request $req)
+    {
+        return view('middleware')->withMessage("Member");
     }
 }
