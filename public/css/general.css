@@ -1,0 +1,158 @@
+#searchColumn {
+  width: 13rem;
+}
+
+[name=foil],
+[name=multicolor] {
+  margin-left: 1rem;
+}
+
+#colorCheck,
+.select {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.text-center {
+  width: 13rem;
+}
+
+#cmc,
+#colors,
+#labelFoil,
+#multicolorlabel {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#colors {
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: black;
+  height: 10rem;
+}
+
+#footer {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.footList {
+  list-style: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+label {
+  font-size: 0.7rem;
+}
+
+[name=cmc] {
+  height: 1rem;
+  width: 2rem;
+  margin-left: 0.9rem;
+  font-size: 0.7rem;
+}
+
+.select {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+#middleHeader {
+  height: 13rem;
+  display: flex;
+  background-color: black;
+}
+
+#logo {
+  height: 10rem;
+  margin: auto;
+}
+
+#navI {
+  height: 4rem;
+}
+
+.container_log {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.nav-link {
+  color: black;
+  padding-top: 10px;
+}
+
+footer {
+  background-color: #343a40;
+  width: 100%;
+}
+
+footer #links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  padding-right: 2.3rem;
+}
+
+footer #links .footList {
+  list-style: none;
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 50px;
+}
+
+footer #links .footList a {
+  color: lightgrey;
+}
+
+footer #social {
+  width: 100%;
+  text-align: center;
+}
+
+footer #social i {
+  color: #a3a6b3;
+  size: 100px;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+  footer #responsive {
+    display: flex;
+  }
+
+  footer #responsive #links {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 30px;
+  }
+
+  footer #responsive #social {
+    width: 25%;
+    text-align: center;
+    margin: 40px;
+  }
+
+  footer #responsive #social i {
+    color: #a3a6b3;
+    size: 100px;
+    font-size: 1.5rem;
+  }
+}
+
