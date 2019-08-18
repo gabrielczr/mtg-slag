@@ -39,6 +39,4 @@ Vue.toasted.register('error', message => message, {
     position: 'bottom-center',
     duration: 1000
 })
-const app = new Vue({
-    el: '#app'
-});
+

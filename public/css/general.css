@@ -1,18 +1,3 @@
-#middleHeader {
-  height: 13rem;
-  display: flex;
-  background-color: black;
-}
-
-#logo {
-  height: 10rem;
-  margin: auto;
-}
-
-#navI {
-  height: 4rem;
-}
-
 #searchColumn {
   width: 13rem;
 }
@@ -46,6 +31,56 @@
   margin: auto;
   width: 90%;
   justify-content: space-between;
+}
+
+footer {
+  background-color: black;
+  height: 10rem;
+}
+
+#footer {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.footList {
+  list-style: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+label {
+  font-size: 0.7rem;
+}
+
+[name=cmc] {
+  height: 1rem;
+  width: 2rem;
+  margin-left: 0.9rem;
+  font-size: 0.7rem;
+}
+
+.select {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+#middleHeader {
+  height: 13rem;
+  display: flex;
+  background-color: black;
+}
+
+#logo {
+  height: 10rem;
+  margin: auto;
+}
+
+#navI {
+  height: 4rem;
 }
 
 .container_log {
@@ -119,21 +154,5 @@ footer #social i {
     size: 100px;
     font-size: 1.5rem;
   }
-}
-
-label {
-  font-size: 0.7rem;
-}
-
-[name=cmc] {
-  height: 1rem;
-  width: 2rem;
-  margin-left: 0.9rem;
-  font-size: 0.7rem;
-}
-
-.select {
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
 }
 
