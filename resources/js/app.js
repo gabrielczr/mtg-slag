@@ -30,13 +30,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-
-window.Vue = require('vue');
-Vue.component('profile', require('./components/profile/Profile.vue'));
-import Toasted from 'vue-toasted';
-Vue.use(Toasted)
-Vue.toasted.register('error', message => message, {
-    position: 'bottom-center',
-    duration: 1000
-})
-
