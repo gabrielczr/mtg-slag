@@ -2,57 +2,88 @@
 
 @section('content')
 <section id='searchColumn'>
-    <form action="/searchResults" method="get">
+
+<form action="/searchResults" method="get">
         <!--card name-->
-        <label for="name">Card name</label>
+        <div class='select card-body'>
+            <p>Search cards</p>
+            <div class='select'>
+                <label for="orderBy">Order by</label>
+                <select name="orderBy" id="">
+
+                    <option value="" selected="true" disabled="disabled"></option>
+                    <option value="orderConvertedDesc">Converted mana cost +/-</option>
+                    <option value="orderConvertedAsc">Converted mana cost -/+</option>
+                    <option value="orderAlphaDesc">Alphabetical z/a</option>
+                    <option value="orderAlphaAsc">Alphabetical a/z</option>
+                </select>
+            </div>
+            <label for="name" id='labelName'>Card name</label>
+            <input type="text" id='name'>
+
+            <!--list of mana colors-->
+
+            <label for="name">Card name</label>
         <input type="text" id='name'>
         <!--list of mana colors-->
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/white.png')}}" alt="white mana icon">
-                <input type="checkbox" name='white'>
+       
+            <div id='colors'>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/white.png')}}" alt="white mana icon">
+                        <input type="checkbox" name='white'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/black.png')}}" alt="black mana icon">
+                        <input type="checkbox" name='black'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
+                        <input type="checkbox" name='blue'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/red.png')}}" alt="red mana icon">
+                        <input type="checkbox" name="red">
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/green.png')}}" alt="green mana icon">
+                        <input type="checkbox" name='green'>
+                    </div>
+                </div>
+                <div class='colorCheck'>
+                    <div class='color'>
+                    <img src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
+                        <input type="checkbox" name='colorless'>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/black.png')}}" alt="black mana icon">
-                <input type="checkbox" name='black'>
-            </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
-                <input type="checkbox" name='blue'>
-            </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/red.png')}}" alt="red mana icon">
-                <input type="checkbox" name='red'>
-            </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/green.png')}}" alt="green mana icon">
-                <input type="checkbox" name='green'>
-            </div>
-        </div>
-        <div class='colorCheck'>
-            <div class='color'>
-                <img src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
-                <input type="checkbox" name='colorless'>
-            </div>
-        </div>
 
-        <label for="foil">Foil:</label>
-        <input type="checkbox" name='foil'>
-        <!-- Allow multicolor-->
-        <label>Show multicolored only: </label>
-        <input type="checkbox" name='multicolor'>
-        <!-- Converted mana cost-->
-        <label for="cmc">Converted mana cost:</label>
-        <input type="number" name='cmc'>
-        <input type="submit" value="SEARCH" name="search">
+
+
+            <div id='labelFoil'>
+                <label for="foil">Foil</label>
+                <input type="checkbox" name='foil'>
+            </div>
+            <!-- Allow multicolor-->
+            <div id='multicolorLabel'>
+                <label>Show multicolored only: </label>
+                <input type="checkbox" name='multicolor'>
+            </div>
+            <!-- Converted mana cost-->
+            <div id='cmc'>
+                <label for="cmc">Converted mana cost</label>
+                <input type="number" name='cmc'>
+            </div> 
+             <input type="submit" value="SEARCH" name="search">
+        </div>
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -76,6 +107,8 @@
                                 <option value="uncommon">uncommon</option>
                                 <option value="rare" >rare</option>
                                 <option value="mythic" >mythic</option>
+
+                         
                             </select>
                         </div>
 
@@ -170,6 +203,8 @@
             </div>
             <input type="submit" value="SEARCH" name="search">
         </div>
+
     </form>
 
 </section>
+@endsection
