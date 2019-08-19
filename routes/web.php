@@ -49,3 +49,6 @@ Route::post('/post/store', 'BlogController@store')->name('post.store');
 Route::get('/post/show/{id}', 'BlogController@show')->name('post.show');
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
+Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
+    ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
