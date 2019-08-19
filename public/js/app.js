@@ -49694,9 +49694,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\mtg-slag-f\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\wamp64\www\mtg-slag-f\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\mtg-slag-f\resources\sass\general.scss */"./resources/sass/general.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\sass\general.scss */"./resources/sass/general.scss");
 
 
 /***/ })
