@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Latest News')
+
+
 @section('content')
 <h1>News List</h1>
 @foreach($posts as $post)

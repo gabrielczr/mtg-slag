@@ -1,8 +1,7 @@
-@include('layouts.header')
+@extends('layouts.app')
+@section('title', $page->title)
 
-
-
-<div>
-  <h2>{{$page->title}}</h2>
-  {!!html_entity_decode($page->content)!!}
-</div>
+@section('content')
+<h2>{{$page->title}}</h2>
+{!!html_entity_decode($page->content)!!}
+@endsection
