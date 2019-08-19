@@ -2,56 +2,57 @@
 
 @section('content')
 <section id='searchColumn'>
-    <form action="">
+    <form action="/searchResults" method="get">
         <!--card name-->
         <label for="name">Card name</label>
         <input type="text" id='name'>
         <!--list of mana colors-->
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
+                <img src="{{URL::asset('img/white.png')}}" alt="white mana icon">
                 <input type="checkbox" name='white'>
             </div>
         </div>
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
+                <img src="{{URL::asset('img/black.png')}}" alt="black mana icon">
                 <input type="checkbox" name='black'>
             </div>
         </div>
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
+                <img src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
                 <input type="checkbox" name='blue'>
             </div>
         </div>
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
-                <input type="checkbox" name='white'>
+                <img src="{{URL::asset('img/red.png')}}" alt="red mana icon">
+                <input type="checkbox" name='red'>
             </div>
         </div>
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
+                <img src="{{URL::asset('img/green.png')}}" alt="green mana icon">
                 <input type="checkbox" name='green'>
             </div>
         </div>
         <div class='colorCheck'>
             <div class='color'>
-                <img src="" alt="">
+                <img src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
                 <input type="checkbox" name='colorless'>
             </div>
         </div>
 
-        <label for="foil">foil</label>
+        <label for="foil">Foil:</label>
         <input type="checkbox" name='foil'>
         <!-- Allow multicolor-->
-        <label>Show only multicolor </label>
+        <label>Show multicolored only: </label>
         <input type="checkbox" name='multicolor'>
         <!-- Converted mana cost-->
-        <label for="cmc">Converted mana cost</label>
+        <label for="cmc">Converted mana cost:</label>
         <input type="number" name='cmc'>
+        <input type="submit" value="SEARCH" name="search">
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -68,77 +69,106 @@
 
 
                         <div class='select'>
-                            <label for="rarity">Rarity</label>
+                            <label for="rarity">Rarity:</label>
                             <select name='rarity'>
                                 <option value="" selected="true" disabled="disabled"></option>
-                                <option name='common' value="Common"></option>
+                                <option name='common' value="common">common</option>
                                 <option value="uncommon">uncommon</option>
                                 <option value="rare" >rare</option>
-                                <option value="rare" >mythic rare</option>
-                                <option value="rare" >legendary</option>
+                                <option value="mythic" >mythic</option>
                             </select>
                         </div>
 
                         <div class='select'>
-                            <label for="set">Set</label>
+                            <label for="set">Set:</label>
                             <select name='set'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($sets->data as $sets)
+                                    <option value="{{ $sets->code }}">{{ $sets->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Format</label>
-                            <select name='set'>
-                                <option value="" selected="true" disabled="disabled">
-                                    <!-- query to populate the type -->
+                            <label for="format">Format:</label>
+                            <select name='format'>
+                                <option value="standard" selected="true">Standard</option>
+                                <option value="modern" selected="true">Modern</option>
+                                <option value="vintage" selected="true">Vintage</option>
+                                <option value="commander" selected="true">Commander</option>
+                                <option value="legacy" selected="true">Legacy</option>
+                                <option value="brawl" selected="true">Brawl</option>
+                                <option value="future" selected="true">Future Standard</option>
+                                <option value="pauper" selected="true">Pauper</option>
+                                <option value="frontier" selected="true">Frontier</option>
+                                <option value="penny" selected="true">Penny Dreadful</option>
+                                <option value="duel" selected="true">Duel Commander</option>
+                                <option value="oldschool" selected="true">Old School</option>
+                                <option value="" selected="true"></option>
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Creature type</label>
-                            <select name='set'>
+                            <label for="creatureType">Creature type:</label>
+                            <select name='creatureType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($creatureTypes->data as $creatureType)
+                                    <option value="{{ $creatureType }}">{{ $creatureType }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Planeswalker type</label>
-                            <select name='set'>
+                            <label for="planeswalkerType">Planeswalker type:</label>
+                            <select name='planeswalkerType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($planeswalkerTypes->data as $planeswalkerType)
+                                    <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Land type</label>
-                            <select name='set'>
+                            <label for="landType">Land type:</label>
+                            <select name='landType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($landTypes->data as $landType)
+                                    <option value="{{ $landType }}">{{ $landType }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Artifact type</label>
-                            <select name='set'>
+                            <label for="artifactType">Artifact type:</label>
+                            <select name='artifactType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($artifactTypes->data as $artifactType)
+                                    <option value="{{ $artifactType }}">{{ $artifactType }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Enchant type</label>
-                            <select name='set'>
+                            <label for="enchantmentType">Enchantment type:</label>
+                            <select name='enchantmentType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
+                                @foreach($enchantmentTypes->data as $enchantmentType)
+                                    <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class='select'>
-                            <label for="set">Spell type</label>
-                            <select name='set'>
+                            <label for="spellType">Spell type:</label>
+                            <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
-                                    <!-- query to populate the type -->
+                                    <option value="">Instant</option>
+                                    <option value="">Sorcery</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <input type="submit" value="SEARCH" name="search">
         </div>
     </form>
 
