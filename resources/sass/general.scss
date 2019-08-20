@@ -89,9 +89,10 @@ label {
 }
 
 //* FOOTER
-footer{
+#footer{
     background-color: #343a40;
     width: 100%;
+    text-align: center;
 
     #links{
         display:flex;
@@ -112,14 +113,12 @@ footer{
     }
     #social{
         width: 100%;
-        text-align: center;
 
         i{
             color: rgb(163, 166, 179);
             size: 100px;
             padding: 1rem;
             font-size: 1.5rem;
-            
         }
     }
 }
@@ -129,7 +128,7 @@ footer{
 //* DESKTOP
 
 @media only screen and (min-width: 800px) {
-    footer{
+    #footer{
         #responsive{
             display: flex;
         
@@ -145,7 +144,7 @@ footer{
             }
 
             #social{
-                width: 25%;
+                
                 text-align: center;
                 margin: 40px;
                 
