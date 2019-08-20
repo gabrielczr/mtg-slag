@@ -16,7 +16,7 @@
                         // png would possibly be the best choice since it gets rid off the corners!
                         // delete this comments after you are done!!!!
                          echo '<img src="' . $cardImage->image_uris->small . '">';
-                         
+                         echo 'Card ID = ' . $card->id;
                      }
 
                 } elseif ($card->layout !== 'transform'){
@@ -36,7 +36,6 @@
         <?php
             if ($cards->has_more)
             {
-                echo '<a href="' . $cards->next_page . '">Next Page</a>';
                 echo '<form action="#" method="get"><input type="submit" value="NEXT PAGE" name="nextPage"></form>';
             }
         ?>

@@ -10,7 +10,6 @@
             <div class='select'>
                 <label for="orderBy">Order by</label>
                 <select name="orderBy" id="">
-
                     <option value="" selected="true" disabled="disabled"></option>
                     <option value="orderConvertedDesc">Converted mana cost +/-</option>
                     <option value="orderConvertedAsc">Converted mana cost -/+</option>
@@ -19,12 +18,8 @@
                 </select>
             </div>
             <label for="name" id='labelName'>Card name</label>
-            <input type="text" id='name'>
+            <input type="text" id='name' name="cardName">
 
-            <!--list of mana colors-->
-
-            <label for="name">Card name</label>
-        <input type="text" id='name'>
         <!--list of mana colors-->
        
             <div id='colors'>
@@ -137,7 +132,7 @@
                                 <option value="penny" selected="true">Penny Dreadful</option>
                                 <option value="duel" selected="true">Duel Commander</option>
                                 <option value="oldschool" selected="true">Old School</option>
-                                <option value="" selected="true"></option>
+                                <option value="" selected="true" disabled="disabled"></option>
                             </select>
                         </div>
                         <div class='select'>
@@ -146,7 +141,7 @@
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                 @foreach($creatureTypes->data as $creatureType)
-                                    <option value="{{ $creatureType }}">{{ $creatureType }}</option>
+                                    <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
                                 @endforeach
                             </select>
                         </div>
