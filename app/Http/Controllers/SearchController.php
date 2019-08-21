@@ -74,7 +74,7 @@ class SearchController extends Controller
 
         curl_close($curl);
 
-       return view('search', [
+       return view('search_page', [
             'sets' => $sets,
             'creatureTypes' => $creatureTypes,
             'planeswalkerTypes' => $planeswalkerTypes,

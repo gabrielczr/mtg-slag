@@ -49687,16 +49687,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/search.scss":
+/*!************************************!*\
+  !*** ./resources/sass/search.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/general.scss ***!
-  \*******************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/search.scss ./resources/sass/general.scss ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\Magic Final Dev\resources\sass\general.scss */"./resources/sass/general.scss");
+__webpack_require__(/*! C:\wamp64\www\mtg3\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\search.scss */"./resources/sass/search.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\general.scss */"./resources/sass/general.scss");
 
 
 /***/ })

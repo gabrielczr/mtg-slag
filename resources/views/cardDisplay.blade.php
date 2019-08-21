@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')      
-<section>
+<section id='cardContainer'>
 
         @foreach($cards->data as $card)
-            <div>
+            <div class='showCard'>
                 <p>{{ $card->name }}</p>
                 <?php
                 if ($card->layout == 'transform') 

@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+[name=foil],
+[name=multicolor] {
+  margin-left: 1rem;
+}
+
+#colorCheck,
+.select {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.text-center {
+  width: 13rem;
+}
+
+label {
+  font-size: 0.7rem;
+}
+
+[name=cmc] {
+  height: 1rem;
+  width: 2rem;
+  margin-left: 0.9rem;
+  font-size: 0.7rem;
+}
+
+.select {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.fas.fa-arrow-circle-left {
+  transform: rotate(90deg);
+}
+
+.fas.fa-arrow-circle-right {
+  transform: rotate(90deg);
+}
+
+#cmc,
+#colors,
+#labelFoil,
+#multicolorlabel {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#colors {
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.mana {
+  height: 1rem;
+  margin-right: 0.2rem;
+}
+
+#searchColumn {
+  width: 100%;
+  margin: 0.2rem;
+}
+
+#searchLayoutCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#searchLayoutCenter div.select.card-body,
+#searchLayoutCenter #searchResult,
+#searchLayoutCenter .card {
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  #searchLayoutCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .fas.fa-arrow-circle-left,
+  .fas.fa-arrow-circle-right {
+    transform: rotate(0deg);
+  }
+
+  #cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: flexbox;
+    justify-content: space-between;
+  }
+
+  #cardContainer img {
+    height: 16rem;
+  }
+
+  #cardContainer .showCardS {
+    height: 23rem;
+    width: 14rem;
+  }
+
+  .d-block.w-90 {
+    margin: auto;
+  }
+
+  .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 2.2rem;
+    border-radius: 1.5rem;
+    margin: auto;
+  }
+
+  .carousel-control-next .fas.fa-redo-alt {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  #addButtons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #addButtons button {
+    width: 47%;
+    background-color: #e46843;
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    margin: 1rem 0.5rem;
+    font-weight: 600;
+  }
+
+  #searchSuggestion {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    font-size: 3rem;
+    line-height: 7rem;
+  }
+
+  #showC {
+    width: 18rem;
+  }
+
+  #searchColumn {
+    width: 14rem;
+    margin: 0.2rem;
+  }
+
+  #cname {
+    height: 2rem;
+    font-weight: 600;
+  }
+}
+

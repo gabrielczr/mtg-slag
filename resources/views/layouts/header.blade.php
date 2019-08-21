@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href="{{mix('/css/general.css')}}">
+    <link rel='stylesheet' href="{{mix('/css/search.css')}}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
