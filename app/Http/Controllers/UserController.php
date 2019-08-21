@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Auth;
+use App\Card;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,12 @@ class UserController extends Controller
     {
 
         return $this->hasMany(Post::class);
+    }
+
+    public function cards()
+    {
+
+        return $this->hasMany(Card::class);
     }
 
 
@@ -31,6 +38,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $posts = Post::where("user_id", "=", $user->id)->get();
+        $cards = Card::where("user_id", "=", $user->id)->get();
         //return view('profile', compact('user', $user));
         return view('profile', compact('user', $user))->with('posts', $posts);
     }

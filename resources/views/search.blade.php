@@ -11,7 +11,6 @@
             <div class='select'>
                 <label for="orderBy">Order by</label>
                 <select name="orderBy" id="">
-
                     <option value="" selected="true" disabled="disabled"></option>
                     <option value="orderConvertedDesc">Converted mana cost +/-</option>
                     <option value="orderConvertedAsc">Converted mana cost -/+</option>
@@ -19,13 +18,11 @@
                     <option value="orderAlphaAsc">Alphabetical a/z</option>
                 </select>
             </div>
-      
-          <!--list of mana colors-->
+            <label for="name" id='labelName'>Card name</label>
+            <input type="text" id='name' name="cardName">
 
-            <label for="name">Card name</label>
-            <input type="text" id='name'>
-            <!--list of mana colors-->
-
+        <!--list of mana colors-->
+       
             <div id='colors'>
                 <div class='colorCheck'>
                     <div class='color'>
@@ -147,7 +144,8 @@
                                 <option value="penny" selected="true">Penny Dreadful</option>
                                 <option value="duel" selected="true">Duel Commander</option>
                                 <option value="oldschool" selected="true">Old School</option>
-                                <option value="" selected="true"></option>
+                                <option value="" selected="true" disabled="disabled"></option>
+
                             </select>
                         </div>
                         <div class='select'>
@@ -163,8 +161,11 @@
                             <select name='creatureType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                    @foreach($creatureTypes->data as $creatureType)
-                                <option value="{{ $creatureType }}">{{ $creatureType }}</option>
+                                @foreach($creatureTypes->data as $creatureType)
+
+                                    <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
+
+
                                 @endforeach
                             </select>
                         </div>

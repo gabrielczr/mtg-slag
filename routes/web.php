@@ -24,7 +24,16 @@ Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDispl
 Route::get('/searchResults', 'CardDisplayController@cardDisplay');
 Route::get('/nextPage', 'CardDisplayController@cardDisplay');
 
+//Route::get('/card/create', 'CardDisplayController@create')->name('card.create');
+//Route::post('/card', 'CardDisplayController@store')->name('card.store');
+
+Route::get('/card/create', 'CardController@create')->name('card.create');
+Route::post('/card', 'CardController@store')->name('card.store');
+
+
 Route::resource('/news', 'BlogController');
+Route::resource('/card', 'CardController');
+//Route::resource('/card', 'CardController');
 //Route::resource('/profile/', 'Profile/ProfileController');
 
 
@@ -52,6 +61,7 @@ Route::post('profile', 'UserController@update_avatar');
 
 Route::get('/post/create', 'BlogController@create')->name('post.create');
 Route::post('/post/store', 'BlogController@store')->name('post.store');
+
 Route::get('/post/show/{id}', 'BlogController@show')->name('post.show');
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
