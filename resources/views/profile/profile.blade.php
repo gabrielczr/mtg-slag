@@ -1,3 +1,5 @@
+
+<link rel='stylesheet' href="{{mix('/css/news.css')}}">
 <div>
   <div>@extends('layouts.app')</div>
 

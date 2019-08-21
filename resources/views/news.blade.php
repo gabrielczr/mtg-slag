@@ -19,18 +19,12 @@
 </div>
         <div id="newsLinks">
             <!-- Show details of the new -->
-            <a href="/post/show/{{$post->id}}">Read more</a> |
-            <!-- Edit this new -->
-            <a href="/post/{{$post->id}}/edit">Edit</a>
-            
-            <script>
-                let color2= $("#newsTitle").attr("class");
-                $("#newsLinks").addClass($color2);
-            </script>
-
+            <a href="/post/show/{{$post->id}}">| Read more</a> |
+            <!-- comment on this new -->
+            <a href="/post/{{$post->id}}/edit">Comment</a> |
+            <a href="/post/{{$post->id}}/edit">Share</a> |
         </div>
 
-<!-- <p>{!!html_entity_decode($post->content)!!}</p> -->
-<hr>
+
 @endforeach
 @endsection
