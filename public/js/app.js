@@ -49698,10 +49698,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/search.scss":
-/*!************************************!*\
-  !*** ./resources/sass/search.scss ***!
-  \************************************/
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49710,6 +49711,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
+
 /*!***************************************************************************************************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/search.scss ./resources/sass/general.scss ./resources/sass/news.scss ***!
   \***************************************************************************************************************************************************/
@@ -49721,6 +49723,7 @@ __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\app.scss */"./resource
 __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\search.scss */"./resources/sass/search.scss");
 __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\general.scss */"./resources/sass/general.scss");
 module.exports = __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\news.scss */"./resources/sass/news.scss");
+
 
 
 /***/ })

@@ -53,7 +53,6 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: auto;
   padding-right: 2.3rem;
 }
 
@@ -82,14 +81,19 @@ footer {
 @media only screen and (min-width: 800px) {
   #footer #responsive {
     display: flex;
+    margin: 0 auto;
   }
 
   #footer #responsive #links {
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 30px;
+  }
+
+  #footer #responsive #links #footList {
+    margin: 0;
   }
 
   #footer #responsive #social {
