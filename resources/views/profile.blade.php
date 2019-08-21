@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div class="row">
+<div class="container ">
+  <div class="row ">
     @if ($message = Session::get('success'))
 
     <div class="alert alert-success alert-block">

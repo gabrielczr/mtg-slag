@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section>
 
@@ -38,5 +37,4 @@
         echo '<form action="#" method="get"><input type="submit" value="NEXT PAGE" name="nextPage"></form>';
     }
     ?>
-
 </section>

@@ -23,11 +23,13 @@ Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDisplay');
 Route::get('/searchResults', 'CardDisplayController@cardDisplay');
 Route::get('/nextPage', 'CardDisplayController@cardDisplay');
+
 //Route::get('/card/create', 'CardDisplayController@create')->name('card.create');
 //Route::post('/card', 'CardDisplayController@store')->name('card.store');
 
 Route::get('/card/create', 'CardController@create')->name('card.create');
 Route::post('/card', 'CardController@store')->name('card.store');
+
 
 Route::resource('/news', 'BlogController');
 Route::resource('/card', 'CardController');
@@ -66,3 +68,4 @@ Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])
     ->where(['page' => '^(((?=(?!admin))(?=(?!\/)).))*$', 'subs' => '.*']);
+
