@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Card;
+use Auth;
 
 class CardDisplayController extends Controller
 {
@@ -323,5 +325,33 @@ class CardDisplayController extends Controller
                     'cards' => $cards,
                     ]);
             }
+    }
+
+
+    public function create()
+    {
+        /*
+        if (user()->type != 'admin') {
+            return new Response(view('unauthorized')->with('role', 'ADMIN'));
+        }*/
+        return view('card.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        $user = Auth::user();
+        //$cards = Card::where("user_id", "=", $user->id)->get();
+
+        $cards = new Card();
+        // Input::get('id', 'NA');
+        $cards->name = $request->id;
+        //$card->cost = $request->cost;
+        $cards->user_id = Auth::user()->id;
+        $cards > save();
+        // return redirect('cardDisplay');
+        var_dump($cards);
+
+        return view('cardDisplay', compact('user', $user))->with('card', $cards);
     }
 }
