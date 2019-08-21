@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href="{{mix('/css/general.css')}}">
+    <link rel='stylesheet' href="{{mix('/css/search.css')}}">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel='stylesheet' href="{{mix('/css/general.css')}}">
+    
     <!-- Fontawesome-->
     <script src="https://kit.fontawesome.com/1af7466343.js"></script>
     <!-- jQuery--> 
