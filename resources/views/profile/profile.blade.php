@@ -1,11 +1,9 @@
 
-<link rel='stylesheet' href="{{mix('/css/news.css')}}">
-<div>
-  <div>@extends('layouts.app')</div>
+<link rel='stylesheet' href="{{mix('/css/profile.css')}}">
+@extends('layouts.app')
+@section('title', 'Profile')
 
-
-  <div>
-    @section('content')
+@section('content')
     <div class="py-4">
       <div class="row justify-content-center">
         <div class="col-md-12">

@@ -1,3 +1,54 @@
-body{
-    background-color: green;
+#profileH5{
+    color:rgb(85, 82, 98);
+    font-family: 'Cinzel', serif;
+    padding: 10px;
+    text-align: center;
+
+}
+
+#profileAvatar{
+    width: 9rem;
+    height: 12rem;
+    
+    
+}
+.profileNews{
+    background-color: red;
+}
+
+button{
+    font-family: 'Cinzel', serif;
+    color: red;
+    font-style: bold;
+}
+
+.deckList{
+    background-color: lightgrey;
+    padding: 13px;
+    margin: 14px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        #customDeck{
+            background-color: rgb(97, 89, 89);
+            padding: 0.5rem;
+            margin: 0.5rem;
+            text-align: center;
+        a{
+            color: white; 
+            font-family: 'Handlee', cursive;
+        }
+        
+
+        }
+        #addDeck{
+            background-color: rgb(40, 206, 109);
+            padding: 0.5rem;
+            margin: 0.5rem;
+            text-align: center;
+        a{
+            color: white; 
+            font-family: 'Handlee', cursive;
+        }
+    }
 }

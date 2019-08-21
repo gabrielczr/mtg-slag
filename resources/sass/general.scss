@@ -98,13 +98,15 @@ label {
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: auto;
+        
         padding-right: 2.3rem;
         .footList{
             list-style: none;
             color: white;
             font-size: 0.8rem;
+           
             margin-top: 50px;
+
             a{
                 color:lightgrey;
             }
@@ -131,15 +133,19 @@ label {
     #footer{
         #responsive{
             display: flex;
+            margin: 0 auto;
         
             #links{
                 
-                width: 70%;
+                width: 100%;
                 display:flex;
                 flex-direction: row;
                 justify-content: space-around;
                 padding-bottom: 30px;
                 
+                #footList{
+                  margin: 0;
+                }
 
             }
 

@@ -49698,17 +49698,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!**********************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/general.scss ./resources/sass/news.scss ***!
-  \**********************************************************************************************************************/
+/*!****************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/general.scss ./resources/sass/news.scss ./resources/sass/profile.scss ***!
+  \****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\wamp64\www\alexis20\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\wamp64\www\alexis20\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\wamp64\www\alexis20\resources\sass\general.scss */"./resources/sass/general.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\alexis20\resources\sass\news.scss */"./resources/sass/news.scss");
+__webpack_require__(/*! C:\wamp64\www\alexis20\resources\sass\news.scss */"./resources/sass/news.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\alexis20\resources\sass\profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })

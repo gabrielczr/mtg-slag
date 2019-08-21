@@ -22,6 +22,7 @@
             <a href="/post/show/{{$post->id}}">| Read more</a> |
             <!-- comment on this new -->
             <a href="/post/{{$post->id}}/edit">Comment</a> |
+            <!-- share with contacts -->
             <a href="/post/{{$post->id}}/edit">Share</a> |
         </div>
 
