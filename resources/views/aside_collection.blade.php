@@ -11,50 +11,14 @@
         </ul>
     </div>
 
-    <div class="card-body" id='showDecks'>
+    <div class="card-body collapse hide" id='showDecks'>
         <h5 class="card-title">Your decks</h5>
-        <!-- @forech($decks as $deck)}{
-        ?>
-        <div class='deckLine'>
-          <div id='infoDeck'>
-            <span>
-              <p id='dlName'>{{$deck->name}}<p>
-            </span>
-            <span>
-                <p id='cardNumber'>{{$deck->cardN}}/60</p>
-            </span>
-            <div id='dlColors'>
-              @foreach($deck->colors as $color){
-                  @if($color=='red')
-                 <img src={{URL::asset('img/red.png')}}
-                  @endif
-                  @if($color=='white')
-                 <img src={{URL::asset('img/white.png')}}
-                 @endif
-                 @if($color=='black')
-                 <img src={{URL::asset('img/black.png')}}
-                 @endif
-                 @if($color=='green')
-                 <img src={{URL::asset('img/green.png')}}
-                 @endif
-                 @if($color=='blu')
-                 <img src={{URL::asset('img/blu.png')}}
-                 @endif
-              }  
-              @endforeach
-            </div>
-          <div>
-            <button id='deleteDeck' value="{{$deck->id}}">Delete this deck </button>
-           </div>
-         </div>
-    }
-   @endforeach
--->
+       
         <p class="card-text">show decks</p>
         <a href="#" class="btn btn-primary">New Deck</a>
     </div>
     
-    <div class="card-body" id='showCollection'>
+    <div class="card-body " id='showCollection'>
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text">Show collection</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>

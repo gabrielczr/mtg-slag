@@ -28,6 +28,7 @@ class SearchController extends Controller
         // Prepare the call for creature types and run it
         $opts = [
             CURLOPT_URL => 'https://api.scryfall.com/catalog/creature-types',
+
             ];
     
         curl_setopt_array($curl, $opts);
@@ -55,6 +56,7 @@ class SearchController extends Controller
         // Prepare the call for artifact types and run it
         $opts = [
             CURLOPT_URL => 'https://api.scryfall.com/catalog/artifact-types',
+
             ];
     
         curl_setopt_array($curl, $opts);
@@ -63,7 +65,7 @@ class SearchController extends Controller
 
         // Prepare the call for enchantment types and run it
         $opts = [
-            CURLOPT_URL => 'https://api.scryfall.com/catalog/enchantment-types',
+            CURLOPT_URL => 'https://api.scryfall.com/catalog/enchantment-types',  
             ];
     
         curl_setopt_array($curl, $opts);
@@ -72,25 +74,18 @@ class SearchController extends Controller
         
 
 
+
         curl_close($curl);
 
-       return view('search', [
+
+       return view('search_page', [
             'sets' => $sets,
             'creatureTypes' => $creatureTypes,
             'planeswalkerTypes' => $planeswalkerTypes,
             'landTypes' => $landTypes,
             'artifactTypes' => $artifactTypes,
             'enchantmentTypes' => $enchantmentTypes,
-            
         ]);
     }
+}
 
-    
-    
-        
-    
-    
-    
- 
-
-}   
