@@ -71,13 +71,7 @@ class SearchController extends Controller
         curl_setopt_array($curl, $opts);
 
         $enchantmentTypes = json_decode(curl_exec($curl));
-
-
-
-
         curl_close($curl);
-
-
 
         return view('search_page', [
             'sets' => $sets,

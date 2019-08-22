@@ -25,11 +25,13 @@ Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDispl
 Route::get('/searchResults', 'CardDisplayController@cardDisplay');
 Route::get('/nextPage', 'CardDisplayController@cardDisplay');
 
+
 //Route::get('/card/create', 'CardDisplayController@create')->name('card.create');
 //Route::post('/card', 'CardDisplayController@store')->name('card.store');
 
 Route::get('/card/create', 'CardController@create')->name('card.create');
 Route::post('/card', 'CardController@store')->name('card.store');
+
 
 
 Route::resource('/news', 'BlogController');

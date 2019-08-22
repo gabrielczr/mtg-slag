@@ -100,7 +100,7 @@
                             <label for="rarity">Rarity:</label>
                             <select name='rarity'>
                                 <option value="" selected="true" disabled="disabled"></option>
-                                <option name='common' value="common">common</option>
+                                <option name="common" value="common">common</option>
                                 <option value="uncommon">uncommon</option>
                                 <option value="rare">rare</option>
                                 <option value="mythic">mythic</option>
@@ -164,6 +164,11 @@
                                 @foreach($creatureTypes->data as $creatureType)
 
                                     <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/development
                                 @endforeach
                             </select>
                         </div>
@@ -248,8 +253,13 @@
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
+<<<<<<< HEAD
                                 <option value="">Instant</option>
                                 <option value="">Sorcery</option>
+=======
+                                <option value="instant" name="instant">Instant</option>
+                                <option value="sorcery" name="sorcery">Sorcery</option>
+>>>>>>> origin/development
                             </select>
                         </div>
                     </div>
