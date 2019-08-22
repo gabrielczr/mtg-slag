@@ -274,6 +274,7 @@ class CardDisplayController extends Controller
 
                 curl_close($curl);
                       
+
                 return view('search_page', [
                     'cards' => $cards
                     ]);
@@ -299,6 +300,7 @@ class CardDisplayController extends Controller
 
                 curl_close($curl);
                  return view('search_page', [
+
                      'cards' => $cards,
                      ]);
 
@@ -320,8 +322,8 @@ class CardDisplayController extends Controller
                 $cards = json_decode(curl_exec($curl));
 
                 curl_close($curl);
-
                 return view('search_page', [
+
                     'cards' => $cards,
                     ]);
             }

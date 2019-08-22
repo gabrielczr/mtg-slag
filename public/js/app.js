@@ -49723,6 +49723,7 @@ __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\general.scss */"./reso
 module.exports = __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\news.scss */"./resources/sass/news.scss");
 
 
+
 /***/ })
 
 /******/ });

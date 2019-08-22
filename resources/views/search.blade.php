@@ -164,8 +164,6 @@
                                 @foreach($creatureTypes->data as $creatureType)
 
                                     <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
-
-
                                 @endforeach
                             </select>
                         </div>
