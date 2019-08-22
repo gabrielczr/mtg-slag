@@ -98,7 +98,7 @@
                             <label for="rarity">Rarity:</label>
                             <select name='rarity'>
                                 <option value="" selected="true" disabled="disabled"></option>
-                                <option name='common' value="common">common</option>
+                                <option name="common" value="common">common</option>
                                 <option value="uncommon">uncommon</option>
                                 <option value="rare" >rare</option>
                                 <option value="mythic" >mythic</option>
@@ -189,8 +189,8 @@
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
-                                    <option value="">Instant</option>
-                                    <option value="">Sorcery</option>
+                                    <option value="instant" name="instant">Instant</option>
+                                    <option value="sorcery" name="sorcery">Sorcery</option>
                             </select>
                         </div>
                     </div>

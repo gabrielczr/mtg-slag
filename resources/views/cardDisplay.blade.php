@@ -15,7 +15,7 @@
                         // Change it in the final display, options are small, normal, large and png
                         // png would possibly be the best choice since it gets rid off the corners!
                         // delete this comments after you are done!!!!
-                         echo '<img src="' . $cardImage->image_uris->small . '">';
+                         echo '<img src="' . $cardImage->image_uris->small . '" alt="' . $card->name . '">';
                          echo 'Card ID = ' . $card->id;
                      }
 
@@ -25,7 +25,7 @@
                         // Change it in the final display, options are small, normal, large and png
                         // png would possibly be the best choice since it gets rid off the corners!
                         // delete this comments after you are done!!!!
-                        echo '<img src="' . $cardImages->small . '">';
+                        echo '<img src="' . $cardImages->small . '" alt="' . $card->name . '">';
                         echo 'Card ID = ' . $card->id;
                 } else {
                     $cardImages = 'No Image for this card provided';

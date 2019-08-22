@@ -23,7 +23,7 @@ Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDisplay');
 Route::get('/searchResults', 'CardDisplayController@cardDisplay');
 Route::get('/nextPage', 'CardDisplayController@cardDisplay');
-
+Route::get('/collectionDisplay', 'CollectionDisplayController@collectionDisplay');
 Route::resource('/news', 'BlogController');
 //Route::resource('/profile/', 'Profile/ProfileController');
 
