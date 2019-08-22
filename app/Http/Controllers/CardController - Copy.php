@@ -22,7 +22,7 @@ class CardController extends Controller
     public function index()
     {
         $cardIDs = Card::all();
-
+        $cardss = [];
         foreach ($cardIDs as $cardID) {
 
             $id = $cardID->name;
@@ -41,7 +41,7 @@ class CardController extends Controller
             // Run the call to the Api
             curl_setopt_array($curl, $opts);
             // Decode the received json to use the data
-            $cardID = json_decode(curl_exec($curl));
+            $cardss[] = json_decode(curl_exec($curl));
             curl_close($curl);
             // echo '<div> <p>' . $cardID->name . '</p>';
             if ($cardID->layout == 'transform') {
@@ -56,13 +56,13 @@ class CardController extends Controller
                 $cardImages = 'No Image for this card provided';
                 //   echo $cardImages;
             }
-            // echo '</div>';
-            // echo '<hr>'; /*
-
-
+            //echo '</div>';
+            //var_dump($cardss);
         }
-        return view('card', ['cardIDs' => $cardIDs])->with(compact('cardImages', 'cardID'));;
+        return view('card', ['cardss' => $cardss]);
+        //return view('card')->with('cardss', json_decode($cardss, true));
     }
+
 
 
     public function create()

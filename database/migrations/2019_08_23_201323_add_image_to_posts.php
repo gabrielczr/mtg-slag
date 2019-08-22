@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactUsTable extends Migration
+class AddAvatarToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateContactUsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_us', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('image')->default('image.jpg');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateContactUsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_us');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }
