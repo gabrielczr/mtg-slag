@@ -164,8 +164,11 @@
                                 @foreach($creatureTypes->data as $creatureType)
 
                                     <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> origin/development
                                 @endforeach
                             </select>
                         </div>
@@ -250,8 +253,13 @@
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
+<<<<<<< HEAD
+                                <option value="">Instant</option>
+                                <option value="">Sorcery</option>
+=======
                                 <option value="instant" name="instant">Instant</option>
                                 <option value="sorcery" name="sorcery">Sorcery</option>
+>>>>>>> origin/development
                             </select>
                         </div>
                     </div>

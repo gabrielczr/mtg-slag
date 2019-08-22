@@ -14,9 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
 Auth::routes();
-
+Route::resource('/card', 'CardController');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search', 'SearchController@index')->name('search');
