@@ -59,7 +59,8 @@
   </div>
 -->
 <div>
-      <button>Decks</button>
+      <button class="profileButtons">Collection</button>
+      <button class="profileButtons">Decks</button>
       <div class="deckList">
         <div id="customDeck">
           <a href="#">Grixis</a><button type="button" class="close" data-dismiss="alert">×</button>
@@ -72,9 +73,9 @@
         </div>
         
       </div>
-      <button>Collection</button>
+      
 </div>
-
+<!--
 <div class="profileNews">
     <h3>News Submited</h3>
     @foreach($posts as $post)
@@ -82,4 +83,5 @@
     @endforeach
   </div>
 </div>
+-->
 @endsection

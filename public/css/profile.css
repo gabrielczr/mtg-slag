@@ -14,18 +14,24 @@
   background-color: red;
 }
 
-button {
+.profileButtons {
+  width: 20%;
+  padding: 5px;
+  background-color: #e46843;
+  border-radius: 2rem;
+  font-size: 0.6rem;
+  margin: 1rem 0.5rem;
+  color: white;
+  font-weight: 600;
   font-family: "Cinzel", serif;
-  color: red;
-  font-style: bold;
 }
 
 .deckList {
-  background-color: lightgrey;
+  background-color: white;
   padding: 13px;
   margin: 14px;
   border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: inset 3px -8px 75px -31px rgba(0, 0, 0, 0.75);
 }
 
 .deckList #customDeck {
@@ -50,5 +56,59 @@ button {
 .deckList #addDeck a {
   color: white;
   font-family: "Handlee", cursive;
+}
+
+@media only screen and (min-width: 800px) {
+  #profileAvatar {
+    width: 9rem;
+    height: 12rem;
+  }
+
+  .profileButtons {
+    width: 8%;
+    padding: 5px;
+    background-color: #e46843;
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    margin: 1rem 0.5rem;
+    color: white;
+    font-weight: 600;
+    font-family: "Cinzel", serif;
+  }
+
+  .deckList {
+    background-color: white;
+    padding: 13px;
+    margin: 14px;
+    width: 20%;
+    border: 1px solid black;
+    box-shadow: inset 3px -8px 75px -31px rgba(0, 0, 0, 0.75);
+  }
+
+  .deckList #customDeck {
+    background-color: #615959;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .deckList #customDeck a {
+    color: white;
+    font-family: "Handlee", cursive;
+  }
+
+  .deckList #addDeck {
+    background-color: #28ce6d;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .deckList #addDeck a {
+    color: white;
+    font-family: "Handlee", cursive;
+  }
 }
 
