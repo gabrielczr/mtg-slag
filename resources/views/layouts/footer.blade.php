@@ -5,7 +5,6 @@
 
         <div id='links'>
             <ul class='footList'>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">Premium</a></li>
                 <li><a href="http://" target="_blank" rel="noopener noreferrer">Sign up</a></li>
                 <li><a href="http://" target="_blank" rel="noopener noreferrer">Log in</a></li>
             </ul>
@@ -15,7 +14,7 @@
                 <li><a href="http://" target="_blank" rel="noopener noreferrer">FAQ's</a></li> 
             </ul>
             <ul class='footList'>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer">Tems & Conditions</a></li>
+                <li><a href="http://" target="_blank" rel="noopener noreferrer">Terms & Conditions</a></li>
                 <li><a href="http://" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
                 <li><a href="http://" target="_blank" rel="noopener noreferrer">Sitemap</a></li>
             </ul >

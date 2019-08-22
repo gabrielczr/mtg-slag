@@ -1,16 +1,16 @@
-@extends('layouts.app')
-
-@section('content')
 <section id='searchColumn'>
 
-<form action="/searchResults" method="get">
+    <form action="/searchResults" method="get">
         <!--card name-->
+        
         <div class='select card-body'>
-            <p>Search cards</p>
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collap" aria-expanded="true" aria-controls="collapseOne">
+                            Search Card
+                        </button>
+                        <div id="collap" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class='select'>
                 <label for="orderBy">Order by</label>
                 <select name="orderBy" id="">
-
                     <option value="" selected="true" disabled="disabled"></option>
                     <option value="orderConvertedDesc">Converted mana cost +/-</option>
                     <option value="orderConvertedAsc">Converted mana cost -/+</option>
@@ -19,48 +19,44 @@
                 </select>
             </div>
             <label for="name" id='labelName'>Card name</label>
-            <input type="text" id='name'>
+            <input type="text" id='name' name="cardName">
 
-            <!--list of mana colors-->
-
-            <label for="name">Card name</label>
-        <input type="text" id='name'>
         <!--list of mana colors-->
        
             <div id='colors'>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/white.png')}}" alt="white mana icon">
+                        <img class='mana' src="{{URL::asset('img/white.png')}}" alt="white mana icon">
                         <input type="checkbox" name='white'>
                     </div>
                 </div>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/black.png')}}" alt="black mana icon">
+                        <img class='mana' src="{{URL::asset('img/black.png')}}" alt="black mana icon">
                         <input type="checkbox" name='black'>
                     </div>
                 </div>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
+                        <img class='mana' src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
                         <input type="checkbox" name='blue'>
                     </div>
                 </div>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/red.png')}}" alt="red mana icon">
+                        <img class='mana' src="{{URL::asset('img/red.png')}}" alt="red mana icon">
                         <input type="checkbox" name="red">
                     </div>
                 </div>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/green.png')}}" alt="green mana icon">
+                        <img class='mana' src="{{URL::asset('img/green.png')}}" alt="green mana icon">
                         <input type="checkbox" name='green'>
                     </div>
                 </div>
                 <div class='colorCheck'>
                     <div class='color'>
-                    <img src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
+                        <img class='mana' src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
                         <input type="checkbox" name='colorless'>
                     </div>
                 </div>
@@ -81,8 +77,9 @@
             <div id='cmc'>
                 <label for="cmc">Converted mana cost</label>
                 <input type="number" name='cmc'>
-            </div> 
-             <input type="submit" value="SEARCH" name="search">
+            </div>
+            <input type="submit" value="SEARCH" name="search">
+        </div>
         </div>
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
@@ -95,7 +92,7 @@
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
 
@@ -105,20 +102,30 @@
                                 <option value="" selected="true" disabled="disabled"></option>
                                 <option name='common' value="common">common</option>
                                 <option value="uncommon">uncommon</option>
-                                <option value="rare" >rare</option>
-                                <option value="mythic" >mythic</option>
+                                <option value="rare">rare</option>
+                                <option value="mythic">mythic</option>
 
-                         
+
                             </select>
                         </div>
+                        <?php
+                        session_start();
+
+                        if (!empty($sets)) {
+                            $_SESSION['sets'] = $sets;
+                        } else {
+                            $sets = $_SESSION['sets'];
+                        }             ?>
+
+
 
                         <div class='select'>
                             <label for="set">Set:</label>
                             <select name='set'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                @foreach($sets->data as $sets)
-                                    <option value="{{ $sets->code }}">{{ $sets->name }}</option>
+                                    @foreach($sets->data as $sets)
+                                <option value="{{ $sets->code }}">{{ $sets->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -137,65 +144,114 @@
                                 <option value="penny" selected="true">Penny Dreadful</option>
                                 <option value="duel" selected="true">Duel Commander</option>
                                 <option value="oldschool" selected="true">Old School</option>
-                                <option value="" selected="true"></option>
+                                <option value="" selected="true" disabled="disabled"></option>
+
                             </select>
                         </div>
                         <div class='select'>
+                            <?php
+                            if (!empty($creatureTypes)) {
+                                $_SESSION['creatureTypes'] = $creatureTypes;
+                            } else {
+                                $creatureTypes = $_SESSION['creatureTypes'];
+                            }             ?>
+
+
                             <label for="creatureType">Creature type:</label>
                             <select name='creatureType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                 @foreach($creatureTypes->data as $creatureType)
-                                    <option value="{{ $creatureType }}">{{ $creatureType }}</option>
+
+                                    <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
+
+
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
+
+                            <?php
+                            if (!empty($planeswalkerTypes)) {
+                                $_SESSION['planeswalkerTypes'] = $planeswalkerTypes;
+                            } else if (!empty($_SESSION['planeswalkerTypes'])) {
+                                $planeswalkerTypes = $_SESSION['planeswalkerTypes'];
+                            }             ?>
+
                             <label for="planeswalkerType">Planeswalker type:</label>
                             <select name='planeswalkerType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                @foreach($planeswalkerTypes->data as $planeswalkerType)
-                                    <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
+                                    @foreach($planeswalkerTypes->data as $planeswalkerType)
+                                <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
+                            <?php
+                            if (!empty($landTypes)) {
+                                $_SESSION['landTypes'] = $landTypes;
+                            } else if (!empty($_SESSION['landTypes'])) {
+                                $landTypes = $_SESSION['landTypes'];
+                            }             ?>
                             <label for="landType">Land type:</label>
                             <select name='landType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                @foreach($landTypes->data as $landType)
-                                    <option value="{{ $landType }}">{{ $landType }}</option>
+                                    @foreach($landTypes->data as $landType)
+                                <option value="{{ $landType }}">{{ $landType }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
+
+
+                            <?php
+                            if (!empty($artifactTypes)) {
+                                $_SESSION['artifactTypes'] = $artifactTypes;
+                            } else if(!empty($_SESSION['artifactTypes'])){
+                                $artifactTypes = $_SESSION['artifactTypes'];
+                            }             ?>
+
                             <label for="artifactType">Artifact type:</label>
                             <select name='artifactType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                @foreach($artifactTypes->data as $artifactType)
-                                    <option value="{{ $artifactType }}">{{ $artifactType }}</option>
+                                    @foreach($artifactTypes->data as $artifactType)
+                                <option value="{{ $artifactType }}">{{ $artifactType }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
+
+                            <?php
+                            if (!empty($enchantmentTypes)) {
+                                $_SESSION['enchantmentTypes'] = $enchantmentTypes;
+                            } else if(!empty($_SESSION['enchantmentTypes'])){
+                                $enchantmentTypes = $_SESSION['enchantmentTypes'];
+                            }             ?>
                             <label for="enchantmentType">Enchantment type:</label>
                             <select name='enchantmentType'>
                                 <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
-                                @foreach($enchantmentTypes->data as $enchantmentType)
-                                    <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>
+                                    @foreach($enchantmentTypes->data as $enchantmentType)
+                                <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
+
+                            <?php
+                            if (!empty($spellTypes)) {
+                                $_SESSION['spellTypes'] = $spellTypes;
+                            } else if(!empty($_SESSION['spellTypes'])){
+                                $spellTypes = $_SESSION['spellTypes'];
+                            }             ?>
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
-                                    <option value="">Instant</option>
-                                    <option value="">Sorcery</option>
+                                <option value="">Instant</option>
+                                <option value="">Sorcery</option>
                             </select>
                         </div>
                     </div>
@@ -207,4 +263,3 @@
     </form>
 
 </section>
-@endsection
