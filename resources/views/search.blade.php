@@ -250,13 +250,8 @@
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
                                 <option value="" selected="true" disabled="disabled">
-<<<<<<< HEAD
-                                    <option value="instant" name="instant">Instant</option>
-                                    <option value="sorcery" name="sorcery">Sorcery</option>
-=======
-                                <option value="">Instant</option>
-                                <option value="">Sorcery</option>
->>>>>>> f4b241e98c44b2ad3c7d4e2c330c222f277b5efb
+                                <option value="instant" name="instant">Instant</option>
+                                <option value="sorcery" name="sorcery">Sorcery</option>
                             </select>
                         </div>
                     </div>
