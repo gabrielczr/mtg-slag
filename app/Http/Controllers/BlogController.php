@@ -21,7 +21,7 @@ class BlogController extends Controller
 
     public function __construct()
     {
-        return $this->middleware('auth');
+       // return $this->middleware('auth');
     }
 
     public function create()

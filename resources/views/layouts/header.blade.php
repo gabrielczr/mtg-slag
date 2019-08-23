@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href="{{mix('/css/general.css')}}">
     <link rel='stylesheet' href="{{mix('/css/search.css')}}">
+    <link rel='stylesheet' href="{{mix('/css/home.css')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,10 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <!-- Fontawesome-->
     <script src="https://kit.fontawesome.com/1af7466343.js"></script>
-    <!-- jQuery--> 
+    <!-- jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
@@ -34,41 +35,49 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <!--{{ config('app.name', 'Laravel') }}-->
                     MTG-SLAG
                 </a>
                 <!-- Right Side Of Navbar -->
-                <ul class="container_log">
-                    <!-- Authentication Links -->
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    @else
+
+
+                <!-- Authentication Links -->
+                @guest
+<div id='container_log'>
+                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                @if (Route::has('register'))
+
+                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+</div>
+                @endif
+                @else
+                <ul class='navbar-nav'>
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="dropdown-item" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                            <a id='logoutB' class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                                {{ __('Logout') }}
+                            </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
 
+
+                            @endguest
+
+
+                        </div>
                     </li>
-                    @endguest
                 </ul>
-
-
             </div>
         </nav>
 
@@ -90,7 +99,7 @@
                         <a class="nav-link" href="">Decks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="news">News</a>
+                        <a class="nav-link" href="/news">News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Contacts</a>
