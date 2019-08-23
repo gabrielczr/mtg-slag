@@ -1,4 +1,4 @@
-<section id='searchColumn'>
+<section >
 
     <form action="/searchResults" method="get">@csrf
         <!--card name-->
@@ -11,6 +11,7 @@
             <div class='select'>
                 <label for="orderBy">Order by</label>
                 <select name="orderBy" id="">
+
                     <option value="orderAlphaAsc" name="orderAlphaAsc">Alphabetical A/z</option>
                     <option value="orderAlphaDesc" name="orderAlphaDesc">Alphabetical z/A</option>
                     <option value="orderConvertedAsc" name="orderConvertedAsc">Converted mana cost -/+</option>
@@ -98,6 +99,7 @@
                         <div class='select'>
                             <label for="rarity">Rarity:</label>
                             <select name='rarity'>
+
                                 <option value="" selected="true" disabled="abled"></option>
                                 <option name="common" value="common">common</option>
                                 <option value="uncommon">uncommon</option>
@@ -130,7 +132,8 @@
                         </div>
                         <div class='select'>
                             <label for="format">Format:</label>
-                            <select name='format'>
+                            <select name='format'> 
+                                
                                 <option value="standard" selected="true">Standard</option>
                                 <option value="modern" selected="true">Modern</option>
                                 <option value="vintage" selected="true">Vintage</option>
@@ -142,7 +145,7 @@
                                 <option value="penny" selected="true">Penny Dreadful</option>
                                 <option value="duel" selected="true">Duel Commander</option>
                                 <option value="oldschool" selected="true">Old School</option>
-                                <option value="" selected="true" disabled="disabled"></option>
+                               <option value="" selected="true"></option>
 
                             </select>
                         </div>
@@ -157,7 +160,7 @@
 
                             <label for="creatureType">Creature type:</label>
                             <select name='creatureType'>
-                                <option value="" selected="true" disabled="disabled">
+                                <option value="" selected="true">
                                     <!-- query to populate the type -->
                                 @foreach($creatureTypes->data as $creatureType)
 
@@ -176,7 +179,7 @@
 
                             <label for="planeswalkerType">Planeswalker type:</label>
                             <select name='planeswalkerType'>
-                                <option value="" selected="true" disabled="disabled">
+                                <option value="" selected="true">
                                     <!-- query to populate the type -->
                                 @foreach($planeswalkerTypes->data as $planeswalkerType)
                                 <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
@@ -192,7 +195,7 @@
                             }             ?>
                             <label for="landType">Land type:</label>
                             <select name='landType'>
-                                <option value="" selected="true" disabled="disabled">
+                                <option value="" selected="true">
                                     <!-- query to populate the type -->
                                 @foreach($landTypes->data as $landType)
                                 <option value="{{ $landType }}">{{ $landType }}</option>
@@ -211,7 +214,7 @@
 
                             <label for="artifactType">Artifact type:</label>
                             <select name='artifactType'>
-                                <option value="" selected="true" disabled="disabled">
+                                <option value="" selected="true">
                                     <!-- query to populate the type -->
                                 @foreach($artifactTypes->data as $artifactType)
                                 <option value="{{ $artifactType }}">{{ $artifactType }}</option>
@@ -228,7 +231,7 @@
                             }             ?>
                             <label for="enchantmentType">Enchantment type:</label>
                             <select name='enchantmentType'>
-                                <option value="" selected="true" disabled="disabled">
+                                <option value="" selected="true">
                                     <!-- query to populate the type -->
                                 @foreach($enchantmentTypes->data as $enchantmentType)
                                 <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>
@@ -237,19 +240,14 @@
                         </div>
                         <div class='select'>
 
-                            <?php
-                            if (!empty($spellTypes)) {
-                                $_SESSION['spellTypes'] = $spellTypes;
-                            } else if(!empty($_SESSION['spellTypes'])){
-                                $spellTypes = $_SESSION['spellTypes'];
-                            }             ?>
+                           
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
+
                                 <option value="" selected="true" disabled="disabled">
 
                                 <option value="instant" name="instant">Instant</option>
                                 <option value="sorcery" name="sorcery">Sorcery</option>
-
                             </select>
                         </div>
                     </div>

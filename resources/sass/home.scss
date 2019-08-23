@@ -1,0 +1,43 @@
+#bigSearch {
+  box-sizing: border-box;
+  padding: 0;
+ 
+}
+.card-deck{
+  margin:5rem 3rem;
+  
+}
+#bSearch {
+  display: flex;
+  width: 15rem;
+  height: 4rem;
+  background-color: rgb(228, 104, 67);
+  border-radius: 4rem;
+
+  border-style: none;
+  border: 0.1rem solid bisque;
+
+  justify-content: space-around;
+
+  margin: 3rem auto;
+  a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+div.card-deck{ 
+  display: flex;
+  flex-direction:row; 
+   justify-content: space-around;
+   margin-right: 3rem;
+   margin-left: 3rem;
+
+}
+#bSearch{
+width: 30rem;  
+}
+}
+

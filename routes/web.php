@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\HomeController;
+
+
+
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('contact-us', 'ContactUSController@contactUS');
 Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
 Auth::routes();
 Route::resource('/card', 'CardController');
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDisplay');
