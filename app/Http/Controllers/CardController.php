@@ -54,7 +54,7 @@ class CardController extends Controller
                 // echo '<img src="' . $cardImages->small . '" alt="' . $cardID->name . '">';
             } else {
                 $cardImages = 'No Image for this card provided';
-                //   echo $cardImages;
+                echo $cardImages;
             }
             //echo '</div>';
             //var_dump($cardss);
@@ -82,10 +82,10 @@ class CardController extends Controller
         $cards = new Card();
         // Input::get('id', 'NA');
         $cards->name = $request->id;
-
+        //$cards->image = $request->image;
         $cards->user_id = Auth::user()->id;
-        // $cards > save();
-        $cards->touch();
+        $cards > save();
+        //$cards->touch();
         return redirect('card');
 
 

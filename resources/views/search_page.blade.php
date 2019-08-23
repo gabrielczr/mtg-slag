@@ -42,7 +42,7 @@
                             ?><div id='addButtons'>
                         <button id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck'>Add to a deck</button>
                         <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
- 
+                        @include('card.create')
                     </div><?php
                                     echo " </div>";
                                 }
@@ -107,7 +107,7 @@
 
 
                 <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
-            </div><?php
+                @include('card.create')</div><?php
 
                     } else {
                         echo "<p id='cname'>$card->name</p>";
@@ -116,7 +116,7 @@
                         ?><div id='addButtons'>
                 <button id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck'>Add to a deck</button>
                 <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
-
+                @include('card.create')
             </div><?php
 
                     } ?>

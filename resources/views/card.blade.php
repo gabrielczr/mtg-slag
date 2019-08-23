@@ -4,27 +4,34 @@
 
 @section('content')
 <h1>My Collection</h1>
-
 <?php //dd($cardss);
-?>
-
-@foreach($cardss as $card)
-
-<h3>{{ $card->name}}</h3>
-<img src="{{$card->image_uris}}
-
-<?php
-//<img src="{{ URL::asset($card->image_uris)}}">
 
 ?>
-<form action=" {{ route('card.destroy', $card['id']) }}" method="POST">
-@method('DELETE')
-@csrf
-<button>Delete Card</button>
-</form>
 
-@endforeach
+<?php //dd($cardss['0']->name);
+//dd($cardss['0']);
+
+$count = count($cardss)-1 ;
+/*
+for($i=0;$i<=$count;$i++) {
+   echo $cardss[$i]->name.'<br>';
+   echo $cardss[$i]->rarity.'<br>';
+   //var_dump ($cardss[$i]);
+}
+*/
+
+?>
+@for($i=0;$i<=$count;$i++)
+<h3>Name of the card: {{$cardss[$i]->name}} </h3>
+<p>Rarity: {{$cardss[$i]->rarity}}</p>
+<p>Set Name: {{$cardss[$i]->set_name}}</p>
 
 
 
+
+@endfor
 @endsection
+
+
+
+
