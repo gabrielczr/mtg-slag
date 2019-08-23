@@ -18,3 +18,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/news.scss', 'public/css')
     .sass('resources/sass/home.scss', 'public/css')
     .sass('resources/sass/profile.scss', 'public/css');
+

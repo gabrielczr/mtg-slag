@@ -18,19 +18,26 @@ use App\Http\Controllers\HomeController;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('contact-us', 'ContactUSController@contactUS');
+Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
+Auth::routes();
+Route::resource('/card', 'CardController');
+
 
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDisplay');
 Route::get('/searchResults', 'CardDisplayController@cardDisplay');
 Route::get('/nextPage', 'CardDisplayController@cardDisplay');
 
+
 //Route::get('/card/create', 'CardDisplayController@create')->name('card.create');
 //Route::post('/card', 'CardDisplayController@store')->name('card.store');
 
 Route::get('/card/create', 'CardController@create')->name('card.create');
 Route::post('/card', 'CardController@store')->name('card.store');
+
 
 
 Route::resource('/news', 'BlogController');

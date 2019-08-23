@@ -6,7 +6,6 @@
         @include('search')
     </div>
 
-
     @if(isset($cards) && isset($cards->data))
 <div id='loginOnSearch'>
     @guest
@@ -55,6 +54,7 @@
                             echo '<img class="d-block w-90" src="' . $cardImage->image_uris->small . '">';
 
 
+
                             ?>
 
 
@@ -66,6 +66,11 @@
                     </div>
                 </div>
 
+                            ?><div id='addButtons'>
+                        <button id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck'>Add to a deck</button>
+                        <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
+ 
+                    </div>
 
             </div>
             @if(Auth::check())
@@ -149,6 +154,11 @@
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
+                ?><div id='addButtons'>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck' data-target="#exampleModalCenter">
+                    Add to a deck
+
                 </button>
             </div>
             <div class="modal-body">
@@ -232,7 +242,7 @@
                     <input type="hidden" name="user_id" value="{{Auth::User()->id}}">
                     <input name="id" value="{{$card->id}}" type="hidden">
 
-                    <input id='bAddToCollection' type="submit" value="Add to Collection">
+        <input id='bAddToCollection' type="submit" value="Add to Collection">
 
                 </form>
             </div>
@@ -240,9 +250,10 @@
 
             <?php
 
-            } ?>
+                    } ?>
         </div>
         @endforeach
+                
         </div>
         <?php
         if ($cards->has_more) {
@@ -250,24 +261,22 @@
             echo '<form action="#" method="get"><input type="submit" value="NEXT PAGE" name="nextPage"></form>';
         }
         ?>
-
-
-    </div> @else
-
-    <div id='searchSuggestion'>
-        <p>
-            Search your card here
-        </p>
-        <i class="fas fa-arrow-circle-left"></i>
-        <p>
-            And add it to your collection or decks!
-        </p>
-        <i class="fas fa-arrow-circle-right"></i>
-    </div>
-
-    @endif
+</div>
+        @else
+        <div id='searchSuggestion'>
+            <p>
+                Search your card here
+            </p>
+            <i class="fas fa-arrow-circle-left"></i>
+            <p>
+                And add it to your collection or decks!
+            </p>
+            <i class="fas fa-arrow-circle-right"></i>
+        </div>
+        @endif
+        
+   
     <div id='showC'>
-
         @include('aside_collection')
     </div>
 </div>

@@ -23,7 +23,6 @@
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <!-- Fontawesome-->
     <script src="https://kit.fontawesome.com/1af7466343.js"></script>
     <!-- jQuery-->
@@ -102,7 +101,7 @@
                         <a class="nav-link" href="/news">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contacts</a>
+                        <a class="nav-link" href="contact-us">Contacts</a>
                     </li>
 
                 </ul>

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')      
 <section id='cardContainer'>
 
@@ -14,8 +15,8 @@
                         // Change it in the final display, options are small, normal, large and png
                         // png would possibly be the best choice since it gets rid off the corners!
                         // delete this comments after you are done!!!!
-                         echo '<img src="' . $cardImage->image_uris->small . '">';
-                         
+                        echo '<img src="' . $cardImage->image_uris->small . '" alt="' . $card->name . '">';
+                        
                      }
 
                 } elseif ($card->layout !== 'transform'){
@@ -24,8 +25,7 @@
                         // Change it in the final display, options are small, normal, large and png
                         // png would possibly be the best choice since it gets rid off the corners!
                         // delete this comments after you are done!!!!
-                        echo '<img src="' . $cardImages->small . '">';
-                        echo 'Card ID = ' . $card->id;
+                        echo '<img src="' . $cardImages->small . '" alt="' . $card->name . '">';
                 } else {
                     $cardImages = 'No Image for this card provided';
                     echo $cardImages;
@@ -50,11 +50,35 @@
             // png would possibly be the best choice since it gets rid off the corners!
             // delete this comments after you are done!!!!
             echo '<img src="' . $cardImages->small . '">';
-            echo 'Card ID = ' . $card->id;
         } else {
             $cardImages = 'No Image for this card provided';
             echo $cardImages;
         } ?>
+    </div>
+    @endforeach
+
+    <?php
+    if ($card->layout == 'transform') {
+        $cardImages = $card->card_faces;
+        foreach ($cardImages as $cardImage) {
+            // images are set to small for development
+            // Change it in the final display, options are small, normal, large and png
+            // png would possibly be the best choice since it gets rid off the corners!
+            // delete this comments after you are done!!!!
+            echo '<img src="' . $cardImage->image_uris->small . '">';
+        }
+    } elseif ($card->layout !== 'transform') {
+        $cardImages = $card->image_uris;
+        // images are set to small for development
+        // Change it in the final display, options are small, normal, large and png
+        // png would possibly be the best choice since it gets rid off the corners!
+        // delete this comments after you are done!!!!
+        echo '<img src="' . $cardImages->small . '">';
+        echo 'Card ID = ' . $card->id;
+    } else {
+        $cardImages = 'No Image for this card provided';
+        echo $cardImages;
+    } ?>
     </div>
     @include('card.create')
 
