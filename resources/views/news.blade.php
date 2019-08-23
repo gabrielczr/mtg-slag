@@ -10,6 +10,7 @@
 <!--class="{{$post->category}}"-->
 <div id="newsDiv">   
         <article id="newsArticle">
+        <img class="rounded-circle" src="/storage/images/{{ $post->image }}" />
             <div>
                 {!!html_entity_decode($post->title)!!}
             </div>

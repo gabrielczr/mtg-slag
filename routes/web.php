@@ -18,6 +18,7 @@ Route::get('contact-us', 'ContactUSController@contactUS');
 Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
 Auth::routes();
 Route::resource('/card', 'CardController');
+Route::resource('/deck', 'DeckController');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search', 'SearchController@index')->name('search');
@@ -31,12 +32,14 @@ Route::get('/nextPage', 'CardDisplayController@cardDisplay');
 
 Route::get('/card/create', 'CardController@create')->name('card.create');
 Route::post('/card', 'CardController@store')->name('card.store');
+Route::get('/deck/create', 'DeckController@create')->name('deck.create');
+Route::post('/deck', 'DeckController@store')->name('deck.store');
 
 
 
 Route::resource('/news', 'BlogController');
 Route::resource('/card', 'CardController');
-//Route::resource('/card', 'CardController');
+//Route::resource('/deck', 'DeckController');
 //Route::resource('/profile/', 'Profile/ProfileController');
 
 

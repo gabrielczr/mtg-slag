@@ -7,6 +7,8 @@ use App\User;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -35,12 +37,26 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $post = new Post();
         $post->title = $request->title;
-        $post->slug = $request->slug;
         $post->summary = $request->summary;
         $post->content = $request->content;
-        //$post->active = 0; this is only for the editor/contributor
+        $post->slug = $request->slug;
+        
+        $imageName = request()->image->getClientOriginalExtension();
+
+        $request->image->storeAs('images', $imageName);
+
+        $post->image = $imageName;
+
+
+        $post->image = $imageName;
+       
         $post->user_id = Auth::user()->id;
         $post->save();
         return redirect('news');
