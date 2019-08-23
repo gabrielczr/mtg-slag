@@ -49698,10 +49698,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/profile.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/profile.scss ***!
-  \*************************************/
+/***/ "./resources/sass/search.scss":
+/*!************************************!*\
+  !*** ./resources/sass/search.scss ***!
+  \************************************/
 
 /*! no static exports found */
 /***/ (function(module, exports) {

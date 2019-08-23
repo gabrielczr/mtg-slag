@@ -40,9 +40,9 @@
 
 
                             ?><div id='addButtons'>
-
                         <button id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck'>Add to a deck</button>
                         <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
+ 
                     </div><?php
                                     echo " </div>";
                                 }
@@ -78,7 +78,6 @@
                 // delete this comments after you are done!!!!
                 echo '<img src="' . $cardImages->small . '">';
                 ?><div id='addButtons'>
-
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck' data-target="#exampleModalCenter">
                     Add to a deck
@@ -117,6 +116,7 @@
                         ?><div id='addButtons'>
                 <button id='bAddToDeck' value="{{$card->id}}" name='bAddToDeck'>Add to a deck</button>
                 <button id='bAddToCollection' value="{{$card->id}}" name='bAddToCollection'>Add to collection</button>
+
             </div><?php
 
                     } ?>
