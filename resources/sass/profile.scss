@@ -1,54 +1,223 @@
-#profileH5{
-    color:rgb(85, 82, 98);
+//* MOBILE
+//*________
+
+
+.profileH3 {
+    color: rgb(85, 82, 98);
     font-family: 'Cinzel', serif;
     padding: 10px;
     text-align: center;
+    font-size: 1rem;
 
 }
 
-#profileAvatar{
+.profileH5 {
+    color: rgb(91, 141, 108);
+    font-family: 'Cinzel', serif;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+
+
+}
+
+.profileH6 {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#profileAvatar {
     width: 9rem;
     height: 12rem;
-    
-    
-}
-.profileNews{
-    background-color: red;
+    justify-content: center;
+
 }
 
-button{
+.profileNews {
+    background-color: lightblue;
+    color: white;
+}
+
+.profileButtons {
+    width: 20%;
+    justify-content: center;
+    background-color: rgb(67, 123, 228);
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    margin: 1rem auto;
+    color: white;
+    font-weight: 600;
     font-family: 'Cinzel', serif;
-    color: red;
-    font-style: bold;
+    display: flex;
+    padding: 0.5rem;
+
+
 }
 
-.deckList{
-    background-color: lightgrey;
-    padding: 13px;
-    margin: 14px;
-    border: 1px solid black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
 
-        #customDeck{
+[type="file"]+label {
+    background: #f15d22;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+
+    &:hover {
+        background-color: darken(#f15d22, 10%);
+    }
+
+    &.btn-1 {
+        background-color: #f79159;
+        box-shadow: 0 6px darken(#f79159, 10%);
+        transition: none;
+
+        &:hover {
+            box-shadow: 0 4px darken(#f79159, 10%);
+            top: 2px;
+        }
+    }
+
+    .menuButtons {
+        width: 50%;
+        border-radius: 2rem;
+        background-color: blue;
+    }
+
+    .deckList {
+
+        padding: 13px;
+        margin: 14px;
+
+
+        .customDeck {
             background-color: rgb(97, 89, 89);
             padding: 0.5rem;
             margin: 0.5rem;
             text-align: center;
-        a{
-            color: white; 
-            font-family: 'Handlee', cursive;
-        }
-        
+
+            a {
+                color: white;
+                font-family: 'Cinzel', serif;
+            }
+
 
         }
-        #addDeck{
+
+        #addDeck {
             background-color: rgb(40, 206, 109);
             padding: 0.5rem;
             margin: 0.5rem;
             text-align: center;
-        a{
-            color: white; 
-            font-family: 'Handlee', cursive;
+
+            a {
+                color: white;
+                font-family: 'Cinzel', serif;
+            }
         }
     }
-}
+
+    .rank-label-container {
+        float: right;
+    }
+
+
+
+    //* DESKTOP
+    //*________
+
+    @media only screen and (min-width: 800px) {
+
+
+        .profileH6 {
+            margin-left: 2rem;
+        }
+
+        .profileH5 {
+            margin-left: 2rem;
+        }
+
+        .profileH3 {
+            margin-left: 2rem;
+        }
+
+        #profileAvatar {
+            width: 9rem;
+            height: 12rem;
+
+
+        }
+
+        .profileButtons {
+            width: 8%;
+            padding: 5px;
+            background-color: rgb(228, 104, 67);
+            border-radius: 2rem;
+            font-size: 0.6rem;
+            margin: 1rem 0.5rem;
+            color: white;
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+
+        }
+
+        .deckList {
+
+            padding: 13px;
+            margin: 14px;
+            width: 20%;
+
+            .customDeck {
+                background-color: rgb(97, 89, 89);
+                padding: 0.5rem;
+                margin: 0.5rem;
+                text-align: center;
+                width: 90%;
+
+                a {
+                    color: white;
+                    font-family: 'Cinzel', serif;
+                }
+
+
+            }
+
+            .generalButton {
+                width: 47%;
+                background-color: rgb(228, 104, 67);
+                border-radius: 2rem;
+                font-size: 0.6rem;
+                margin: 1rem 0.5rem;
+                color: white;
+                font-weight: 600;
+            }
+
+
+            #addDeck {
+                background-color: rgb(40, 206, 109);
+                padding: 0.5rem;
+                margin: 0.5rem;
+                text-align: center;
+                width: 90%;
+
+                a {
+                    color: white;
+                    font-family: 'Cinzel', serif;
+                }
+            }
+        }
+    }
