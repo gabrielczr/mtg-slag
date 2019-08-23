@@ -72,9 +72,7 @@ class SearchController extends Controller
 
         $enchantmentTypes = json_decode(curl_exec($curl));
         
-
-
-
+    
         curl_close($curl);
 
 

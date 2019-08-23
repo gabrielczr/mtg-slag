@@ -12,14 +12,22 @@ class CardDisplayController extends Controller
         {
             // Setting variables for card search
             
-            $baseUrl = 'https://api.scryfall.com/cards/search?q=';
+            $baseUrl = 'https://api.scryfall.com/cards/search?';
+            $searchOrder = '';
+            $searchCardName = '';
             $searchRed = '';
             $searchGreen = '';
             $searchWhite = '';
             $searchBlack = '';
             $searchBlue = '';
             $searchColorless = '';
-            $searchCardName = '';
+            $addBlack = '';
+            $addBlue = '';
+            $addGreen = '';
+            $addRed = '';
+            $addWhite = '';
+            $searchCMC = '';
+            $searchFoil = '';
             $searchSet = '';
             $searchRarity = '';
             $searchFormat = '';
@@ -30,13 +38,6 @@ class CardDisplayController extends Controller
             $searchEnchantmentType = '';
             $searchSpellType = '';
             $searchMultiColor = '';
-            $searchCMC = '';
-            $searchFoil = '';
-            $addBlack = '';
-            $addBlue = '';
-            $addGreen = '';
-            $addRed = '';
-            $addWhite = '';
             
             
 
@@ -44,8 +45,11 @@ class CardDisplayController extends Controller
             // Get the input from the form to know what to search for:
             
             if(isset($_GET['search'])){ 
+
                 // Basic card searches
+
                 // Building the appendixes for the base URL according to the needed queries
+                
                 if(isset($_GET['multicolor'])){
                     if(isset($_GET['green'])){
                         $addGreen = 'g';
@@ -70,7 +74,10 @@ class CardDisplayController extends Controller
                                         . $addWhite 
                                         . ' '; 
                 }
+                
                 // To prevent an error, when selecting multiple colors, whitout selecting the multicolor checkbox
+                
+                // Search for green cards
                 if(isset($_GET['green'])){
                     if(isset($_GET['multicolor'])){
                         $searchGreen = '';
@@ -107,6 +114,8 @@ class CardDisplayController extends Controller
                         $searchGreen = 'c=g ';
                     }
                 }
+
+                // Search for red cards
                 if(isset($_GET['red'])){
                     if(isset($_GET['multicolor'])){
                         $searchRed = '';
@@ -143,6 +152,9 @@ class CardDisplayController extends Controller
                         $searchRed = 'c=r ';
                     }
                 }
+
+                // Search for blue cards
+
                 if(isset($_GET['blue'])){
                     if(isset($_GET['multicolor'])){
                         $searchBlue = '';
@@ -179,6 +191,9 @@ class CardDisplayController extends Controller
                         $searchBlue = 'c=u ';
                     }
                 }
+
+                // Search for black cards
+
                 if(isset($_GET['black'])){
                     if(isset($_GET['multicolor'])){
                         $searchBlack = '';
@@ -215,6 +230,9 @@ class CardDisplayController extends Controller
                         $searchBlack = 'c=b ';
                     }
                 }
+
+                // Search for white cards
+
                 if(isset($_GET['white'])){
                     if(isset($_GET['multicolor'])){
                         $searchWhite = '';
@@ -251,8 +269,12 @@ class CardDisplayController extends Controller
                         $searchWhite = 'c=w ';
                     }
                 }
+                
+                // Search for colorless cards
+
                 // Since most cards have colorless mana, selecting multicolor wouldnt make any sense here
                 // We still add extra safety so we don't get errors displayed.
+                
                 if(isset(
                     $_GET['colorless'])&&
                     ((isset($_GET['blue']))||
@@ -270,63 +292,166 @@ class CardDisplayController extends Controller
                 }elseif(isset($_GET['colorless'])){
                     $searchColorless = 'c=c';
                 }
+
+                // Advanced card search
+                
                 // To search cards by their rarity
+                
                 if(isset($_GET['rarity'])){
                     $searchRarity = 'r:' . $_GET['rarity'] . ' ';
                 }
+
                 // To see cards that are considered legal in the desired format
+
                 if(isset($_GET['format'])&&($_GET['format'] !== '')){
                     $searchFormat = 'f:' . $_GET['format'] . ' ';
                 } else {
                     $searchFormat = '';
                 }
+                
                 // Search cards by set or edition
+
                 if(isset($_GET['set'])){
                     $searchFormat = 's:' . $_GET['set'] . ' ';
                 }
+                
                 // The different type searches
-                if(isset($_GET['creatureType'])){
+                
+                // Creature types
+                
+                if(
+                    isset($_GET['creatureType'])&&
+                    (isset($_GET['planeswalkerType'])||
+                    isset($_GET['landType'])||
+                    isset($_GET['artifactType'])||
+                    isset($_GET['enchantmentType'])||
+                    isset($_GET['spellType']))
+                    ){
+                    $chosenType = strtolower($_GET['creatureType']);
+                    $searchCreatureType = 't:' . $chosenType . ' or ';
+                }elseif (isset($_GET['creatureType'])) {
                     $chosenType = strtolower($_GET['creatureType']);
                     $searchCreatureType = 't:' . $chosenType . ' ';
                 }
-                if(isset($_GET['planeswalkerType'])){
+                
+                // Planeswalker types
+                
+                if(
+                    isset($_GET['planeswalkerType'])&&
+                    (isset($_GET['landType'])||
+                    isset($_GET['artifactType'])||
+                    isset($_GET['enchantmentType'])||
+                    isset($_GET['spellType']))
+                ){
+                    $chosenType = strtolower($_GET['planeswalkerType']);
+                    $searchPlaneswalkerType = 't:' . $chosenType . ' or ';
+                }elseif (isset($_GET['planeswalkerType'])){
                     $chosenType = strtolower($_GET['planeswalkerType']);
                     $searchPlaneswalkerType = 't:' . $chosenType . ' ';
                 }
-                if(isset($_GET['landType'])){
+                
+                // Land types
+                
+                if(
+                    isset($_GET['landType'])&&
+                    (isset($_GET['artifactType'])||
+                    isset($_GET['enchantmentType'])||
+                    isset($_GET['spellType']))
+                ){
+                    $chosenType = strtolower($_GET['landType']);
+                    $searchLandType = 't:' . $chosenType . ' or ';
+                }elseif(isset($_GET['landType'])){
                     $chosenType = strtolower($_GET['landType']);
                     $searchLandType = 't:' . $chosenType . ' ';
                 }
-                if(isset($_GET['artifactType'])){
+                
+                // Artifact types
+                
+                if(
+                    isset($_GET['artifactType'])&&
+                    (isset($_GET['enchantmentType'])||
+                    isset($_GET['spellType']))
+                ){
+                    $chosenType = strtolower($_GET['artifactType']);
+                    $searchArtifactType = 't:' . $chosenType . ' or ';
+                }elseif(isset($_GET['artifactType'])){
                     $chosenType = strtolower($_GET['artifactType']);
                     $searchArtifactType = 't:' . $chosenType . ' ';
                 }
-                if(isset($_GET['enchantmentType'])){
+                
+                // Enchantment types
+                
+                if(
+                    isset($_GET['enchantmentType'])&&
+                    (isset($_GET['spellType']))
+                ){
+                    $chosenType = strtolower($_GET['enchantmentType']);
+                    $searchEnchantmentType = 't:' . $chosenType . ' or ';
+                }elseif(isset($_GET['enchantmentType'])){
                     $chosenType = strtolower($_GET['enchantmentType']);
                     $searchEnchantmentType = 't:' . $chosenType . ' ';
                 }
+                
+                // Spell types
+                
                 if(isset($_GET['spellType'])){
                     $chosenType = strtolower($_GET['spellType']);
                     $searchSpellType = 't:' . $chosenType . ' ';
                 }
+                
                 // Search by exact card name
+                
                 if(isset($_GET['cardName'])&&($_GET['cardName'] !== '')){
-                    $searchCardName = "!'" . $_GET['cardName'] . "'";
+                    $searchCardName = "!'" . str_replace("'", ' ', $_GET['cardName']) . "'";
                 }else{
                     $searchCardName = '';
                 }
+                
                 // Search by converted Mana Cost
+                
                 if(isset($_GET['cmc'])&&($_GET['cmc'] !== '')){
                     $searchCMC = 'cmc=' . $_GET['cmc'] . ' ';
                 }else{
                     $searchCMC = '';
                 }
+                
                 // See the cards that have a foil version
+                
                 if(isset($_GET['foil'])){
                     $searchFoil = 'is:foil' . ' ';
                 }
+                
+                // Setting parameters for ordering the results
+                
+                $chosenOrderBy = ($_GET['orderBy']);
+                switch($chosenOrderBy){
+
+                    // Alphabetical order ascending
+                    
+                    case 'orderAlphaAsc': $searchOrder = 'order=name&q='; 
+                    break;
+                    
+                    // Alphabetical order descending
+                    
+                    case 'orderAlphaDesc': $searchOrder = 'order=name&dir=desc&q='; 
+                    break;
+                    
+                    // Order by converted mana cost ascending
+                    
+                    case 'orderConvertedAsc': $searchOrder = 'order=cmc&dir=asc&q='; 
+                    break;
+                    
+                    // Order by converted mana cost descending
+                    
+                    case 'orderConvertedDesc': $searchOrder = 'order=cmc&dir=desc&q='; 
+                    break;
+                    default: $searchOrder = 'order=name&q='; exit(); break;
+                }
+                
                 // Encoding the final URL to make the API call and escaping whitespace
+                
                 $finalQuery = str_replace(' ', '%20', $baseUrl 
+                    . $searchOrder
                     . $searchGreen
                     . $searchBlack 
                     . $searchBlue
@@ -346,9 +471,13 @@ class CardDisplayController extends Controller
                     . $searchCardName
                     . $searchCMC
                     . $searchFoil);
+                
                 // Initialize the call to the Api
+                
                 $curl = curl_init();
+                
                 // Set the options to retrieve all the asked cards and passing the final search url
+                
                 $opts = [
                     CURLOPT_URL => $finalQuery,
                     CURLOPT_RETURNTRANSFER => true,
@@ -356,11 +485,14 @@ class CardDisplayController extends Controller
                     CURLOPT_SSL_VERIFYHOST => false,
                     CURLOPT_SSL_VERIFYPEER => false
                 ];
+                
                 // Run the call to the Api
+                
                 curl_setopt_array($curl, $opts);
-                //var_dump($opts[CURLOPT_URL]);
+                //var_dump($opts[CURLOPT_URL]); // To be deleted in production!
 
                 // Decode the received json to use the data
+                
                 $cards = json_decode(curl_exec($curl));
 
                 curl_close($curl);
@@ -370,22 +502,26 @@ class CardDisplayController extends Controller
                     ]);
 
             } 
+            
             // Prepare the next result page:
+            
             elseif(isset($_GET['nextPage'])) {
 
                
                 $curl = curl_init();
                 $opts = [
-                    CURLOPT_URL => '', // add correct url for display of next page
+                    CURLOPT_URL => '{{$cards->next_page}}', // add correct url for display of next page
                     CURLOPT_RETURNTRANSFER => true,
-                    // only needed for the first call inside the cardDisplay function
                     CURLOPT_SSL_VERIFYHOST => false,
                     CURLOPT_SSL_VERIFYPEER => false
                 ];
+                
                 // Run the call to the Api
+                
                 curl_setopt_array($curl, $opts);
 
                 // Decode the received json to use the data
+                
                 $cards = json_decode(curl_exec($curl));
 
                 curl_close($curl);
@@ -394,21 +530,25 @@ class CardDisplayController extends Controller
                      ]);
 
             }
+            
             // Display some random cards on initialization
+            
             else {
                 $curl = curl_init();
+                
                 // Set the options to retrieve random cards
                 $opts = [
                     CURLOPT_URL => $baseUrl,
                     CURLOPT_RETURNTRANSFER => true,
-                    // only needed for the first call inside the cardDisplay function
                     CURLOPT_SSL_VERIFYHOST => false,
                     CURLOPT_SSL_VERIFYPEER => false
                 ];
+                
                 // Run the call to the Api
                 curl_setopt_array($curl, $opts);
 
                 // Decode the received json to use the data
+                
                 $cards = json_decode(curl_exec($curl));
 
                 curl_close($curl);
@@ -418,8 +558,6 @@ class CardDisplayController extends Controller
                     ]);
             }
     }
-
-
 
     public function create()
     {

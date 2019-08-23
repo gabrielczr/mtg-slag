@@ -8,7 +8,7 @@
     <div id='cardContainer'>
 
         @if(isset($cards))
-
+        @if(!empty($cards->data))
         @foreach($cards->data as $card)
         <div class='showCardS'>
             <?php
@@ -141,9 +141,10 @@
             <i class="fas fa-arrow-circle-right"></i>
         </div>
         @endif
+        
     </div>
     <div id='showC'>
-
+        @endif
         @include('aside_collection')
     </div>
 </div>
