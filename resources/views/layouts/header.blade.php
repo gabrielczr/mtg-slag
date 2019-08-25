@@ -7,6 +7,7 @@
     <link rel='stylesheet' href="{{mix('/css/general.css')}}">
     <link rel='stylesheet' href="{{mix('/css/search.css')}}">
     <link rel='stylesheet' href="{{mix('/css/home.css')}}">
+    <link rel='stylesheet' href="{{mix('/css/collection.css')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -82,20 +83,20 @@
 
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <img id='navI' src="{{URL::asset('img/slagwhite.png')}}">
+            <img id='navI' src="{{URL::asset('img/logo.png')}}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search">Collection</a>
+                        <a class="nav-link" href="/collection">Collection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Decks</a>
+                        <a class="nav-link" href="/deck">Deck</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/news">News</a>
@@ -108,7 +109,7 @@
             </div>
         </nav>
         <div id='middleHeader'>
-            <img id='logo' src="{{ URL::asset('img/slagred.png') }}" alt="">
+            <img id='logo' src="{{ URL::asset('img/logoLight.png') }}" alt="">
         </div>
 
 </header>

@@ -20,7 +20,7 @@ class Post extends Model
 	protected $primaryKey = 'id';
 	// protected $guarded = [];
 	// protected $hidden = ['id'];
-	protected $fillable = ['title', 'summary', 'content', 'user_id'];
+	protected $fillable = ['title', 'summary', 'content', 'image', 'user_id'];
 	public $timestamps = true;
 
 	/*

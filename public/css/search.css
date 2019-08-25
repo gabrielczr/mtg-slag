@@ -201,10 +201,11 @@ label {
   margin: auto;
 }
 
-#cname {
+.cname {
   margin-top: 2rem;
   height: 2rem;
   font-weight: 600;
+  text-align: center;
 }
 
 #bChooseD {
@@ -233,11 +234,11 @@ label {
 
   #asideCollection .card.text-center {
     margin-top: 5.5rem;
-    width: 13rem;
+    width: 14rem;
   }
 
   #searchColumn {
-    width: 17rem;
+    width: 14rem;
     margin: 0.2rem;
   }
 }

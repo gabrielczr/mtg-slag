@@ -13,8 +13,8 @@
         </div>
 
         <div class="card-body collapse hide" id='showDecks'>
-            <h5 class="card-title">Your decks</h5>
-
+            <h5 class="card-title">Your deck</h5>
+            @include('show_deck')
             <p class="card-text">show decks</p>
             <a href="#" class="btn btn-primary">New Deck</a>
         </div>
@@ -22,6 +22,8 @@
         <div class="card-body " id='showCollection'>
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">Show collection</p>
+
+
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactUsTable extends Migration
+class AddImageToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,11 @@ class CreateContactUsTable extends Migration
      * @return void
      */
     public function up()
-{
-Schema::create('contactus', function (Blueprint $table) { $table->increments('id'); $table->string('name'); $table->string('email'); $table->text('message'); $table->timestamps(); });
-}
+    {
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('image')->default('image.jpg');
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -23,6 +25,8 @@ Schema::create('contactus', function (Blueprint $table) { $table->increments('id
      */
     public function down()
     {
-        Schema::dropIfExists('contact_us');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+        });
     }
 }

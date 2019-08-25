@@ -3,8 +3,8 @@
 }
 //SEARCH ASIDE
 
-[name="foil"],
-[name="multicolor"] {
+[name=foil],
+[name=multicolor] {
   margin-left: 1rem;
 }
 #loginOnSearch{
@@ -91,7 +91,7 @@ justify-content: space-around;
 label {
   font-size: 0.7rem;
 }
-[name="cmc"] {
+[name=cmc] {
   height: 1rem;
   width: 2rem;
   margin-left: 0.9rem;
@@ -173,10 +173,11 @@ label {
 .d-block.w-90 {
   margin: auto;
 }
-#cname {
+.cname {
   margin-top: 2rem;
   height: 2rem;
   font-weight: 600;
+  text-align: center;
 }
 #bChooseD {
   display: flex;
@@ -202,11 +203,11 @@ label {
   margin: 0;
   .card.text-center{
     margin-top: 5.5rem;
-    width: 13rem;
+    width: 14rem;
 }
   }
   #searchColumn {
-    width: 17rem;
+    width: 14rem;
     margin: 0.2rem;
   }
  
