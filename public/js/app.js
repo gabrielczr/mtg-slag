@@ -49676,10 +49676,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/collection.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/collection.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/general.scss":
 /*!*************************************!*\
   !*** ./resources/sass/general.scss ***!
   \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/home.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/home.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49698,11 +49720,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/search.scss":
 /*!************************************!*\
   !*** ./resources/sass/search.scss ***!
   \************************************/
-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -49711,19 +49743,20 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-
-/*!***************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/search.scss ./resources/sass/general.scss ./resources/sass/news.scss ***!
-  \***************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/search.scss ./resources/sass/general.scss ./resources/sass/news.scss ./resources/sass/home.scss ./resources/sass/collection.scss ./resources/sass/profile.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\mtg3\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\search.scss */"./resources/sass/search.scss");
-__webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\general.scss */"./resources/sass/general.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\mtg3\resources\sass\news.scss */"./resources/sass/news.scss");
-
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\search.scss */"./resources/sass/search.scss");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\general.scss */"./resources/sass/general.scss");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\news.scss */"./resources/sass/news.scss");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\home.scss */"./resources/sass/home.scss");
+__webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\collection.scss */"./resources/sass/collection.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\gabbbbbbbbbbb\resources\sass\profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })

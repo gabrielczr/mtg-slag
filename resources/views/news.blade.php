@@ -8,6 +8,7 @@
 @foreach($posts as $post)
 
 <!--class="{{$post->category}}"-->
+<<<<<<< HEAD
 <div id="newsDiv">   
         <article id="newsArticle">
         <img class="rounded-circle" src="/storage/images/{{ $post->image }}" />
@@ -25,8 +26,26 @@
             <a href="/post/{{$post->id}}/edit">Comment</a> |
             <!-- share with contacts -->
             <a href="/post/{{$post->id}}/edit">Share</a> |
+=======
+<div id="newsDiv">
+    <article id="newsArticle">
+        <div>
+            {!!html_entity_decode($post->title)!!}
+>>>>>>> origin/development
         </div>
+        <p>{!!html_entity_decode($post->summary)!!}</p>
+    </article>
 
+
+    <div id="newsLinks">
+        <!-- Show details of the new -->
+        <a href="/post/show/{{$post->id}}">| Read more</a> |
+        <!-- comment on this new -->
+        <a href="/post/{{$post->id}}/edit">Comment</a> |
+        <!-- share with contacts -->
+        <a href="/post/{{$post->id}}/edit">Share</a> |
+    </div>
+</div>
 
 @endforeach
 @endsection

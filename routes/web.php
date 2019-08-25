@@ -11,15 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\HomeController;
+
+
+
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('contact-us', 'ContactUSController@contactUS');
 Route::post('contact-us', ['as' => 'contactus.store', 'uses' => 'ContactUSController@contactUSPost']);
 Auth::routes();
 Route::resource('/card', 'CardController');
+
 Route::resource('/deck', 'DeckController');
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/collection', 'CollectionDisplayController@collectionDisplay')->name('collection');
 
 Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/cardDisplay', 'CardDisplayController@cardDisplay')->name('cardDisplay');
