@@ -2,7 +2,11 @@
   box-sizing: border-box;
 }
 //SEARCH ASIDE
-
+.nameSuggestion{
+  background-color: white;
+  width: 100%;
+  box-shadow: 0;
+}
 [name=foil],
 [name=multicolor] {
   margin-left: 1rem;

@@ -146,6 +146,7 @@
 
 
         });
+
         $('#addToCollection').submit(function(e) {
             e.preventDefault();
             $.ajax({
@@ -159,9 +160,47 @@
 
         })
 
+        $('#search-box').keyup(function() {
+            $('.nameSuggestion').remove();
+          
+            $.ajax({
 
+                url: 'https://api.scryfall.com/catalog/card-names',
+
+                type: 'get',
+
+                data: 'keyword=' + $(this).val(),
+
+                success: function(result) {
+
+                    $data = result['data'];
+
+                    $ammount = result['total_values'];
+
+                    $i = 0;
+                    for ($i = 0; $i < $ammount - 1; $i++) {
+                        if ($i == 10) {
+                            break;
+                        }
+                        
+                        $('#suggestion-box').append("<button class='nameSuggestion'>" + $data[$i] + "</button>");
+                    }
+                    //   $('#suggesstion-box').html("<p id='nameSuggestion'></p>")
+                },
+                error: function(err) {
+
+                    // Si une erreur AJAX se produit
+
+                    console.log('FUCKING ERROR');
+
+                }
+
+            });
+
+        });
 
     });
 </script>
+
 
 @endsection

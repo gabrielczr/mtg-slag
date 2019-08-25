@@ -99,6 +99,9 @@
                         <a class="nav-link" href="/deck">Deck</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/search">Search cards</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/news">News</a>
                     </li>
                     <li class="nav-item">

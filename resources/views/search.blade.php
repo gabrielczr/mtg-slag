@@ -1,85 +1,101 @@
-<section >
+<section>
 
     <form action="/searchResults" method="get">@csrf
         <!--card name-->
-        
+
         <div class='select card-body'>
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collap" aria-expanded="true" aria-controls="collapseOne">
-            Search Card
-        </button>
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collap" aria-expanded="true" aria-controls="collapseOne">
+                Search Card
+            </button>
             <div id="collap" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class='select'>
-                <label for="orderBy">Order by</label>
-                <select name="orderBy" id="">
+                <div class='select'>
+                    <label for="orderBy">Order by</label>
+                    <select name="orderBy" id="">
 
-                    <option value="orderAlphaAsc" name="orderAlphaAsc">Alphabetical A/z</option>
-                    <option value="orderAlphaDesc" name="orderAlphaDesc">Alphabetical z/A</option>
-                    <option value="orderConvertedAsc" name="orderConvertedAsc">Converted mana cost -/+</option>
-                    <option value="orderConvertedDesc" name="orderConvertedDesc">Converted mana cost +/-</option>
-                </select>
-            </div>
-            <label for="name" id='labelName'>Card name</label>
-            <input type="text" id='name' name="cardName">
-
-        <!--list of mana colors-->
-       
-            <div id='colors'>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/white.png')}}" alt="white mana icon">
-                        <input type="checkbox" name='white'>
-                    </div>
+                        <option value="orderAlphaAsc" name="orderAlphaAsc">Alphabetical A/z</option>
+                        <option value="orderAlphaDesc" name="orderAlphaDesc">Alphabetical z/A</option>
+                        <option value="orderConvertedAsc" name="orderConvertedAsc">Converted mana cost -/+</option>
+                        <option value="orderConvertedDesc" name="orderConvertedDesc">Converted mana cost +/-</option>
+                    </select>
                 </div>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/black.png')}}" alt="black mana icon">
-                        <input type="checkbox" name='black'>
-                    </div>
-                </div>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
-                        <input type="checkbox" name='blue'>
-                    </div>
-                </div>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/red.png')}}" alt="red mana icon">
-                        <input type="checkbox" name="red">
-                    </div>
-                </div>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/green.png')}}" alt="green mana icon">
-                        <input type="checkbox" name='green'>
-                    </div>
-                </div>
-                <div class='colorCheck'>
-                    <div class='color'>
-                        <img class='mana' src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
-                        <input type="checkbox" name='colorless'>
-                    </div>
-                </div>
-            </div>
 
 
 
-            <div id='labelFoil'>
-                <label for="foil">Foil</label>
-                <input type="checkbox" name='foil'>
+                <div class="frmSearch">
+
+                    <input type="text" id="search-box" placeholder="Card Name" />
+
+                    <div id="suggestion-box">
+
+                    
+                    </div>
+
+                </div>
+
+                ​​
+                <label for="name" id='labelName'>Card name</label>
+
+                <input type="text" id='name' name="cardName">
+
+                <!--list of mana colors-->
+
+                <div id='colors'>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/white.png')}}" alt="white mana icon">
+                            <input type="checkbox" name='white'>
+                        </div>
+                    </div>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/black.png')}}" alt="black mana icon">
+                            <input type="checkbox" name='black'>
+                        </div>
+                    </div>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/blue.png')}}" alt="blue mana icon">
+                            <input type="checkbox" name='blue'>
+                        </div>
+                    </div>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/red.png')}}" alt="red mana icon">
+                            <input type="checkbox" name="red">
+                        </div>
+                    </div>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/green.png')}}" alt="green mana icon">
+                            <input type="checkbox" name='green'>
+                        </div>
+                    </div>
+                    <div class='colorCheck'>
+                        <div class='color'>
+                            <img class='mana' src="{{URL::asset('img/colorless.png')}}" alt="colorless mana icon">
+                            <input type="checkbox" name='colorless'>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id='labelFoil'>
+                    <label for="foil">Foil</label>
+                    <input type="checkbox" name='foil'>
+                </div>
+                <!-- Allow multicolor-->
+                <div id='multicolorLabel'>
+                    <label>Show multicolored only: </label>
+                    <input type="checkbox" name='multicolor'>
+                </div>
+                <!-- Converted mana cost-->
+                <div id='cmc'>
+                    <label for="cmc">Converted mana cost</label>
+                    <input type="number" name='cmc'>
+                </div>
+                <input type="submit" value="SEARCH" name="search">
             </div>
-            <!-- Allow multicolor-->
-            <div id='multicolorLabel'>
-                <label>Show multicolored only: </label>
-                <input type="checkbox" name='multicolor'>
-            </div>
-            <!-- Converted mana cost-->
-            <div id='cmc'>
-                <label for="cmc">Converted mana cost</label>
-                <input type="number" name='cmc'>
-            </div>
-            <input type="submit" value="SEARCH" name="search">
-        </div>
         </div>
         <!-- show extra options-->
         <div class="accordion" id="accordionExample">
@@ -132,8 +148,8 @@
                         </div>
                         <div class='select'>
                             <label for="format">Format:</label>
-                            <select name='format'> 
-                                
+                            <select name='format'>
+
                                 <option value="standard" selected="true">Standard</option>
                                 <option value="modern" selected="true">Modern</option>
                                 <option value="vintage" selected="true">Vintage</option>
@@ -145,7 +161,7 @@
                                 <option value="penny" selected="true">Penny Dreadful</option>
                                 <option value="duel" selected="true">Duel Commander</option>
                                 <option value="oldschool" selected="true">Old School</option>
-                               <option value="" selected="true"></option>
+                                <option value="" selected="true"></option>
 
                             </select>
                         </div>
@@ -162,9 +178,9 @@
                             <select name='creatureType'>
                                 <option value="" selected="true">
                                     <!-- query to populate the type -->
-                                @foreach($creatureTypes->data as $creatureType)
+                                    @foreach($creatureTypes->data as $creatureType)
 
-                                    <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
+                                <option name="creatureType" value="{{ $creatureType }}">{{ $creatureType }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -181,7 +197,7 @@
                             <select name='planeswalkerType'>
                                 <option value="" selected="true">
                                     <!-- query to populate the type -->
-                                @foreach($planeswalkerTypes->data as $planeswalkerType)
+                                    @foreach($planeswalkerTypes->data as $planeswalkerType)
                                 <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
                                 @endforeach
                             </select>
@@ -197,7 +213,7 @@
                             <select name='landType'>
                                 <option value="" selected="true">
                                     <!-- query to populate the type -->
-                                @foreach($landTypes->data as $landType)
+                                    @foreach($landTypes->data as $landType)
                                 <option value="{{ $landType }}">{{ $landType }}</option>
                                 @endforeach
                             </select>
@@ -208,7 +224,7 @@
                             <?php
                             if (!empty($artifactTypes)) {
                                 $_SESSION['artifactTypes'] = $artifactTypes;
-                            } else if(!empty($_SESSION['artifactTypes'])){
+                            } else if (!empty($_SESSION['artifactTypes'])) {
                                 $artifactTypes = $_SESSION['artifactTypes'];
                             }             ?>
 
@@ -216,7 +232,7 @@
                             <select name='artifactType'>
                                 <option value="" selected="true">
                                     <!-- query to populate the type -->
-                                @foreach($artifactTypes->data as $artifactType)
+                                    @foreach($artifactTypes->data as $artifactType)
                                 <option value="{{ $artifactType }}">{{ $artifactType }}</option>
                                 @endforeach
                             </select>
@@ -226,21 +242,21 @@
                             <?php
                             if (!empty($enchantmentTypes)) {
                                 $_SESSION['enchantmentTypes'] = $enchantmentTypes;
-                            } else if(!empty($_SESSION['enchantmentTypes'])){
+                            } else if (!empty($_SESSION['enchantmentTypes'])) {
                                 $enchantmentTypes = $_SESSION['enchantmentTypes'];
                             }             ?>
                             <label for="enchantmentType">Enchantment type:</label>
                             <select name='enchantmentType'>
                                 <option value="" selected="true">
                                     <!-- query to populate the type -->
-                                @foreach($enchantmentTypes->data as $enchantmentType)
+                                    @foreach($enchantmentTypes->data as $enchantmentType)
                                 <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class='select'>
 
-                           
+
                             <label for="spellType">Spell type:</label>
                             <select name='spellType'>
 
@@ -259,3 +275,7 @@
     </form>
 
 </section>
+
+
+
+​
