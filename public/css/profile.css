@@ -1,43 +1,109 @@
-#profileH5 {
+.profileH3 {
   color: #555262;
   font-family: "Cinzel", serif;
   padding: 10px;
   text-align: center;
+  font-size: 1rem;
+}
+
+.profileH5 {
+  color: #5b8d6c;
+  font-family: "Cinzel", serif;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.profileH6 {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 #profileAvatar {
   width: 9rem;
   height: 12rem;
+  justify-content: center;
 }
 
 .profileNews {
-  background-color: red;
+  background-color: lightblue;
+  color: white;
 }
 
-button {
+.profileButtons {
+  width: 20%;
+  justify-content: center;
+  background-color: #437be4;
+  border-radius: 2rem;
+  font-size: 0.6rem;
+  margin: 1rem auto;
+  color: white;
+  font-weight: 600;
   font-family: "Cinzel", serif;
-  color: red;
-  font-style: bold;
+  display: flex;
+  padding: 0.5rem;
+}
+
+[type=file] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type=file] + label {
+  background: #f15d22;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1rem 50px;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+
+[type=file] + label:hover {
+  background-color: #d3460d;
+}
+
+[type=file] + label.btn-1 {
+  background-color: #f79159;
+  box-shadow: 0 6px #f57128;
+  transition: none;
+}
+
+[type=file] + label.btn-1:hover {
+  box-shadow: 0 4px #f57128;
+  top: 2px;
+}
+
+.menuButtons {
+  width: 50%;
+  border-radius: 2rem;
+  background-color: blue;
 }
 
 .deckList {
-  background-color: lightgrey;
   padding: 13px;
   margin: 14px;
-  border: 1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.deckList #customDeck {
+.deckList .customDeck {
   background-color: #615959;
   padding: 0.5rem;
   margin: 0.5rem;
   text-align: center;
 }
 
-.deckList #customDeck a {
+.deckList .customDeck a {
   color: white;
-  font-family: "Handlee", cursive;
+  font-family: "Cinzel", serif;
 }
 
 .deckList #addDeck {
@@ -49,6 +115,83 @@ button {
 
 .deckList #addDeck a {
   color: white;
-  font-family: "Handlee", cursive;
+  font-family: "Cinzel", serif;
+}
+
+.rank-label-container {
+  float: right;
+}
+
+@media only screen and (min-width: 800px) {
+  .profileH6 {
+    margin-left: 2rem;
+  }
+
+  .profileH5 {
+    margin-left: 2rem;
+  }
+
+  .profileH3 {
+    margin-left: 2rem;
+  }
+
+  #profileAvatar {
+    width: 9rem;
+    height: 12rem;
+  }
+
+  .profileButtons {
+    width: 8%;
+    padding: 5px;
+    background-color: #e46843;
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    margin: 1rem 0.5rem;
+    color: white;
+    font-weight: 600;
+    font-family: "Cinzel", serif;
+  }
+
+  .deckList {
+    padding: 13px;
+    margin: 14px;
+    width: 20%;
+  }
+
+  .deckList .customDeck {
+    background-color: #615959;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .deckList .customDeck a {
+    color: white;
+    font-family: "Cinzel", serif;
+  }
+
+  .deckList .generalButton {
+    width: 47%;
+    background-color: #e46843;
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    margin: 1rem 0.5rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .deckList #addDeck {
+    background-color: #28ce6d;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .deckList #addDeck a {
+    color: white;
+    font-family: "Cinzel", serif;
+  }
 }
 

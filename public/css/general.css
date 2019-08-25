@@ -1,6 +1,6 @@
 footer {
   background-color: black;
-  height: 10rem;
+  height: 3rem;
 }
 
 #footer {
@@ -112,7 +112,7 @@ div.dropdown-menu.show {
 
   #footer #responsive {
     display: flex;
-    margin: 0 auto;
+    width: 100%;
   }
 
   #footer #responsive #links {
