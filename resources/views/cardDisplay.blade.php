@@ -30,6 +30,7 @@
                     $cardImages = 'No Image for this card provided';
                     echo $cardImages;
                 }?>
+                @include('card.create')
             </div>    
         @endforeach
 
@@ -80,7 +81,7 @@
         echo $cardImages;
     } ?>
     </div>
-    @include('card.create')
+    
 
     @endforeach
     <?php

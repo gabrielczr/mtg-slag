@@ -7,6 +7,90 @@
   margin-left: 1rem;
 }
 
+#loginOnSearch {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#loginReminder {
+  width: 10rem;
+  margin: 1rem auto;
+}
+
+#searchSuggestion {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  font-size: 3rem;
+  line-height: 7rem;
+}
+
+#addButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#addButtons button,
+#addButtons input {
+  margin: 0;
+  width: 100%;
+  height: 2.3rem;
+  background-color: #e46843;
+  border-radius: 2rem;
+  font-size: 0.6rem;
+  margin: 1rem 0.5rem;
+  color: white;
+  font-weight: 600;
+  border-style: none;
+  border: 0.1rem solid bisque;
+}
+
+#addButtons label {
+  font-size: 1.5rem;
+}
+
+#addButtons input[type=number] {
+  border: 0;
+  background-color: white;
+  border-radius: 0;
+  border: 0.2rem solid orange;
+  font-size: 2rem;
+  width: 5rem;
+  color: black;
+}
+
+#addButtons div.modal-content {
+  display: flex;
+}
+
+#addButtons div.modal-content .close {
+  width: 1.5rem;
+}
+
+#addButtons div.modal-content .close span {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+#addButtons div.modal-content div.modal-footer {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#addButtons div.modal-content div.modal-footer #bChooseD {
+  display: flex;
+  flex-direction: column;
+}
+
+#addButtons div.modal-content div.modal-footer button {
+  width: 10rem;
+}
+
 #colorCheck,
 .select {
   display: flex;
@@ -68,6 +152,7 @@ label {
 }
 
 #searchLayoutCenter {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,11 +165,62 @@ label {
   width: 100%;
 }
 
+#cardContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: flexbox;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+#cardContainer img {
+  height: 16rem;
+}
+
+#cardContainer .showCardS {
+  height: 26rem;
+  width: 14rem;
+  margin: auto;
+  border-top: 2px solid red;
+}
+
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 2.2rem;
+  border-radius: 1.5rem;
+  margin: auto;
+}
+
+.carousel-control-next .fas.fa-redo-alt {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.d-block.w-90 {
+  margin: auto;
+}
+
+.cname {
+  margin-top: 2rem;
+  height: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#bChooseD {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalI {
+  height: 20rem;
+}
+
 @media only screen and (min-width: 800px) {
   #searchLayoutCenter {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
 
   .fas.fa-arrow-circle-left,
@@ -92,75 +228,18 @@ label {
     transform: rotate(0deg);
   }
 
-  #cardContainer {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: flexbox;
-    justify-content: space-between;
+  #asideCollection {
+    margin: 0;
   }
 
-  #cardContainer img {
-    height: 16rem;
-  }
-
-  #cardContainer .showCardS {
-    height: 23rem;
+  #asideCollection .card.text-center {
+    margin-top: 5.5rem;
     width: 14rem;
-  }
-
-  .d-block.w-90 {
-    margin: auto;
-  }
-
-  .carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 2.2rem;
-    border-radius: 1.5rem;
-    margin: auto;
-  }
-
-  .carousel-control-next .fas.fa-redo-alt {
-    color: white;
-    font-size: 1.2rem;
-  }
-
-  #addButtons {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #addButtons button {
-    width: 47%;
-    background-color: #e46843;
-    border-radius: 2rem;
-    font-size: 0.6rem;
-    margin: 1rem 0.5rem;
-    color: white;
-    font-weight: 600;
-  }
-
-  #searchSuggestion {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    font-size: 3rem;
-    line-height: 7rem;
-  }
-
-  #showC {
-    width: 18rem;
   }
 
   #searchColumn {
     width: 14rem;
     margin: 0.2rem;
-  }
-
-  #cname {
-    height: 2rem;
-    font-weight: 600;
   }
 }
 

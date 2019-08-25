@@ -37,7 +37,6 @@
         <img onclick="document.getElementById('id01').style.display='block'" id="profileAvatar" src="/storage/avatars/{{ $user->avatar }}" />
 
 
-        <!--<img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />-->
         <!-- badge -->
         <div class="rank-label-container">
           <span class="label label-default rank-label">
@@ -117,17 +116,12 @@
 
 
     <button class="profileButtons">Collection</button>
-    <button class="profileButtons">Decks</button>
 
+    <button class="profileButtons">Deck</button>
     <div class="deckList">
+
       <div class="customDeck">
         <a href="#">Grixis</a><button type="button" class="close" data-dismiss="alert">×</button>
-      </div>
-      <div class="customDeck">
-        <a href="#">Jund</a><button type="button" class="close" data-dismiss="alert">×</button>
-      </div>
-      <div id="addDeck">
-        <a href="#">Add</a><button type="button" class="close" data-dismiss="alert">×</button>
       </div>
 
     </div>

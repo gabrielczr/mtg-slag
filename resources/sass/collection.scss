@@ -1,0 +1,26 @@
+#cardContainer[name="collectionContainer"] {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: flexbox;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 6rem;
+
+  .showCardS {
+      
+    height: 26rem;
+    width: 14rem;
+    margin: auto 1.5rem;
+    border-top: 2px solid red;
+  }
+  img {
+    height: 16rem;
+    margin: auto;
+  }
+}
+#collectionTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 6rem;
+}

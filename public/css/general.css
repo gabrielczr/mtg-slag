@@ -32,10 +32,28 @@ footer {
   height: 4rem;
 }
 
-.container_log {
+#container_log {
   display: flex;
   flex-direction: row;
   list-style: none;
+}
+
+#container_log a {
+  color: #343a40;
+  margin-left: 1rem;
+}
+
+div.dropdown-menu.show {
+  position: absolute;
+}
+
+.navbar-nav {
+  overflow: visible;
+}
+
+#logoutB {
+  position: relative;
+  right: 1rem;
 }
 
 .nav-link {
@@ -79,6 +97,19 @@ footer {
 }
 
 @media only screen and (min-width: 800px) {
+  div.dropdown-menu.show {
+    position: absolute;
+  }
+
+  .navbar-nav {
+    overflow: visible;
+  }
+
+  #logoutB {
+    position: relative;
+    right: 0rem;
+  }
+
   #footer #responsive {
     display: flex;
     width: 100%;
