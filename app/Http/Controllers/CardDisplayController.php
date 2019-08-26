@@ -467,7 +467,7 @@ class CardDisplayController extends Controller
             // Run the call to the Api
 
             curl_setopt_array($curl, $opts);
-            //var_dump($opts[CURLOPT_URL]); // To be deleted in production!
+            var_dump($opts[CURLOPT_URL]); // To be deleted in production!
 
             // Decode the received json to use the data
 

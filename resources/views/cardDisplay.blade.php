@@ -3,7 +3,7 @@
 @section('content')      
 <section id='cardContainer'>
 
-        @foreach($cards->data as $card)
+        @foreach($cardResults->data as $card)
             <div class='showCard'>
                 <p>{{ $card->name }}</p>
                 <?php
@@ -85,8 +85,8 @@
 
     @endforeach
     <?php
-    if ($cards->has_more) {
-        echo '<a href="' . $cards->next_page . '">Next Page</a>';
+    if ($cardResults->has_more) {
+        echo '<a href="' . $cardResults->next_page . '">Next Page</a>';
         echo '<form action="#" method="get"><input type="submit" value="NEXT PAGE" name="nextPage"></form>';
     }
     ?>
