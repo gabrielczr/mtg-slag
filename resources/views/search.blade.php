@@ -23,11 +23,10 @@
 
                 <div class="frmSearch">
 
-                    <input type="text" id="search-box" placeholder="Card Name" />
+                    <input type="text" name="cardName" id="search-box" placeholder="Card Name" />
 
                     <div id="suggestion-box">
-
-                    
+                        
                     </div>
 
                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Card;
 use App\User;
 use App\Deck;
+use Auth;
 
 class DeckController extends Controller
 {
@@ -67,12 +68,13 @@ class DeckController extends Controller
         $decks = new Deck();
         // Input::get('id', 'NA');
         $decks->name = $request->id;
-        $decks->card_id = Card::$id;
         $decks->user_id = Auth::user()->id;
         // $cards > save();
         $decks->touch();
         return redirect('deck');
 
+
+    
 
         //return view('cardDisplay', compact('user', $user))->with('card', $card);
     }

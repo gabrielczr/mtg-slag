@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+#suggestion-box {
+  background-color: white;
+  max-height: 10rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  display: none;
+}
+
 .nameSuggestion {
   background-color: white;
   width: 100%;

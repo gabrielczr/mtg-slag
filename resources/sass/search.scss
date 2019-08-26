@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 //SEARCH ASIDE
+#suggestion-box{
+  background-color: white;
+  max-height: 10rem;
+  overflow-y: scroll ;
+
+  overflow-x: hidden;
+  position: relative;
+ display: none;
+}
+
 .nameSuggestion{
   background-color: white;
   width: 100%;
@@ -214,5 +224,6 @@ label {
     width: 14rem;
     margin: 0.2rem;
   }
+ 
  
 }

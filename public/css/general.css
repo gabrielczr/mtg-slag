@@ -1,6 +1,7 @@
 footer {
   background-color: black;
   height: 3rem;
+  margin-top: 10rem;
 }
 
 #footer {
@@ -45,6 +46,7 @@ footer {
 
 div.dropdown-menu.show {
   position: absolute;
+  right: 5rem;
 }
 
 .navbar-nav {
@@ -52,8 +54,12 @@ div.dropdown-menu.show {
 }
 
 #logoutB {
+  background-color: #c23333;
+}
+
+#logoutB,
+#profileLink {
   position: relative;
-  right: 1rem;
 }
 
 .nav-link {
