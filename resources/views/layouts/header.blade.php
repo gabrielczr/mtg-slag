@@ -93,7 +93,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/collection">Collection</a>
@@ -108,7 +108,7 @@
                         <a class="nav-link" href="/news">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us">Contacts</a>
+                        <a class="nav-link" href="/contact-us">Contacts</a>
                     </li>
 
                 </ul>

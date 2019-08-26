@@ -32,10 +32,7 @@
                 </div>
 
                 ​​
-                <label for="name" id='labelName'>Card name</label>
-
-                <input type="text" id='name' name="cardName">
-
+                
                 <!--list of mana colors-->
 
                 <div id='colors'>

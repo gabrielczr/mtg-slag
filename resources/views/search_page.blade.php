@@ -46,7 +46,7 @@
                                 } else {
                                     echo " <div class='carousel-item'>";
                                 }
-                                echo '<img class="d-block w-90" src="' . $cardImage->image_uris->small . '">';
+                                echo '<img class="d-block w-90" src="' . $cardImage->image_uris->large . '">';
 
                                 echo '</div>';
                             }
@@ -71,7 +71,7 @@
                     // Change it in the final display, options are small, normal, large and png
                     // png would possibly be the best choice since it gets rid off the corners!
                     // delete this comments after you are done!!!!
-                    echo '<img src="' . $cardImages->small . '">';
+                    echo '<img src="' . $cardImages->large . '">';
 
                     ?>
                 @if(Auth::check())
@@ -99,7 +99,7 @@
             //  echo '<form <a href="' ."searchResoult/$cards->next_page" . '">Next Page</a> ';
             ?>
 
-        <form action='/searchResoult/more' method='get'> @csrf
+        <form action='/searchResoult' method='get'> @csrf
             <input type='submit' value="$cards->next_page" name='nextPage'>
         </form>
         <?php }
@@ -175,7 +175,7 @@
                     $ammount = result['total_values'];
                     // $resoults = array();
                     $i = 0;
-                    console.log($filter);
+                    
                     for ($i = 0; $i < $ammount - 1; $i++) {
                         $boxName = $data[$i].toLowerCase();
                         if ($boxName.indexOf($filter) != -1) {
@@ -191,7 +191,8 @@
                     $('.data').click(function(e) {
                         e.preventDefault();
                         $('#search-box').val($(this).html());
-
+                        $('#suggestion-box').html('');
+                        $('#suggestion-box').css('display','none');
                     });
                     //   $('#suggesstion-box').html("<p id='nameSuggestion'></p>")
                 },

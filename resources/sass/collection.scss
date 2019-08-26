@@ -8,7 +8,6 @@
   margin-top: 6rem;
 
   .showCardS {
-      
     height: 26rem;
     width: 14rem;
     margin: auto 1.5rem;
@@ -18,9 +17,18 @@
     height: 16rem;
     margin: auto;
   }
+  form {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 #collectionTitle {
   width: 100%;
   text-align: center;
   margin-top: 6rem;
+}
+.btn.btn-default {
+  background-color: rgb(194, 51, 51);
+
+  margin-top: 1rem;
 }
