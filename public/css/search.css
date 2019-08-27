@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+#suggestion-box {
+  background-color: white;
+  max-height: 10rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  display: none;
+}
+
+#suggestion-box {
+  width: 80%;
+  margin: auto;
+}
+
 .nameSuggestion {
   background-color: white;
   width: 100%;
@@ -34,6 +48,16 @@
   line-height: 7rem;
 }
 
+[name=search] {
+  background-color: #e46843;
+  border-radius: 2rem;
+  width: 6rem;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  margin-top: 0.5rem;
+}
+
 #addButtons {
   display: flex;
   flex-direction: row;
@@ -43,7 +67,7 @@
 #addButtons button,
 #addButtons input {
   margin: 0;
-  width: 100%;
+  width: 6rem;
   height: 2.3rem;
   background-color: #e46843;
   border-radius: 2rem;
@@ -246,6 +270,11 @@ label {
   #searchColumn {
     width: 14rem;
     margin: 0.2rem;
+  }
+
+  #suggestion-box {
+    position: absolute;
+    width: 12rem;
   }
 }
 

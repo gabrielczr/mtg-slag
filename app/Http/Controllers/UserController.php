@@ -6,6 +6,7 @@ use App\Post;
 use Auth;
 use App\Card;
 use App\User;
+use App\Deck;
 use Illuminate\Http\Request;
 
 class UserController extends Controller

@@ -23,20 +23,16 @@
 
                 <div class="frmSearch">
 
-                    <input type="text" id="search-box" placeholder="Card Name" />
+                    <input type="text" name="cardName" id="search-box" placeholder="Card Name" />
 
                     <div id="suggestion-box">
-
-                    
+                        
                     </div>
 
                 </div>
 
                 ​​
-                <label for="name" id='labelName'>Card name</label>
-
-                <input type="text" id='name' name="cardName">
-
+                
                 <!--list of mana colors-->
 
                 <div id='colors'>

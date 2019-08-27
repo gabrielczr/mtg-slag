@@ -71,8 +71,8 @@ require __DIR__ . '/profile/profile.php';
 
 //Route::get('/profile.shows', 'App\UserController@view_post');
 Route::get('/profile/shows', 'BlogController@view_post');
-Route::get('profile', 'UserController@profile');
-Route::post('profile', 'UserController@update_avatar');
+Route::get('/profile', 'UserController@profile');
+Route::post('/profile', 'UserController@update_avatar');
 
 Route::get('/post/create', 'BlogController@create')->name('post.create');
 Route::post('/post/store', 'BlogController@store')->name('post.store');

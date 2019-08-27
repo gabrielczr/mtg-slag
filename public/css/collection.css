@@ -20,9 +20,19 @@
   margin: auto;
 }
 
+#cardContainer[name=collectionContainer] form {
+  display: flex;
+  justify-content: space-around;
+}
+
 #collectionTitle {
   width: 100%;
   text-align: center;
   margin-top: 6rem;
+}
+
+.btn.btn-default {
+  background-color: #c23333;
+  margin-top: 1rem;
 }
 

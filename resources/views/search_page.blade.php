@@ -46,7 +46,7 @@
                                 } else {
                                     echo " <div class='carousel-item'>";
                                 }
-                                echo '<img class="d-block w-90" src="' . $cardImage->image_uris->small . '">';
+                                echo '<img class="d-block w-90" src="' . $cardImage->image_uris->large . '">';
 
                                 echo '</div>';
                             }
@@ -63,15 +63,6 @@
                 @endif
                 <?php
 
-                    //     foreach ($cardImages as $cardImage) {
-                    // images are set to small for development
-                    // Change it in the final display, options are small, normal, large and png
-                    // png would possibly be the best choice since it gets rid off the corners!
-                    // delete this comments after you are done!!!!
-                    //       echo "<p id='cname'> $card->name </p>";
-                    //     echo '<img src="' . $cardImage->image_uris->small . '">';
-                    //   $c++;
-                    // }
                 } elseif ($card->layout !== 'transform') {
                     echo "<p class='cname'> $card->name </p>";
                     $cardImages = $card->image_uris;
@@ -80,7 +71,7 @@
                     // Change it in the final display, options are small, normal, large and png
                     // png would possibly be the best choice since it gets rid off the corners!
                     // delete this comments after you are done!!!!
-                    echo '<img src="' . $cardImages->small . '">';
+                    echo '<img src="' . $cardImages->large . '">';
 
                     ?>
                 @if(Auth::check())
@@ -108,7 +99,7 @@
             //  echo '<form <a href="' ."searchResoult/$cards->next_page" . '">Next Page</a> ';
             ?>
 
-        <form action='/searchResoult/more' method='get'> @csrf
+        <form action='/searchResoult' method='get'> @csrf
             <input type='submit' value="$cards->next_page" name='nextPage'>
         </form>
         <?php }
@@ -160,31 +151,49 @@
 
         })
 
+
+
         $('#search-box').keyup(function() {
-            $('.nameSuggestion').remove();
-          
+            $('#suggestion-box').html('');
+            $filter = $('#search-box').val();
+            $filter = $filter.toLowerCase();
+
             $.ajax({
 
                 url: 'https://api.scryfall.com/catalog/card-names',
 
                 type: 'get',
 
-                data: 'keyword=' + $(this).val(),
+                data: 'keyword=' + $filter,
 
                 success: function(result) {
 
                     $data = result['data'];
 
-                    $ammount = result['total_values'];
 
+
+                    $ammount = result['total_values'];
+                    // $resoults = array();
                     $i = 0;
+                    
                     for ($i = 0; $i < $ammount - 1; $i++) {
-                        if ($i == 10) {
-                            break;
+                        $boxName = $data[$i].toLowerCase();
+                        if ($boxName.indexOf($filter) != -1) {
+                            // $resoults.add($data[$i]);
+                            $('#suggestion-box').append("<div id='suggContainer'><a href='#' value='" + $data[$i] + " ' class='data'>" + $data[$i] + "</a></div><br id='breaklist'>");
+                            $('#suggestion-box').css('display', 'flex');
+                            $('#suggestion-box').css('flex-direction', 'column');
+
                         }
-                        
-                        $('#suggestion-box').append("<button class='nameSuggestion'>" + $data[$i] + "</button>");
+
                     }
+
+                    $('.data').click(function(e) {
+                        e.preventDefault();
+                        $('#search-box').val($(this).html());
+                        $('#suggestion-box').html('');
+                        $('#suggestion-box').css('display','none');
+                    });
                     //   $('#suggesstion-box').html("<p id='nameSuggestion'></p>")
                 },
                 error: function(err) {
@@ -197,7 +206,10 @@
 
             });
 
+
+
         });
+
 
     });
 </script>

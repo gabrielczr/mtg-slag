@@ -1,0 +1,50 @@
+#deckTitle {
+  width: 100%;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+#deckContainer {
+  width: 90%;
+  margin: auto;
+  border: 2px solid orangered;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+#deckContainer section.showCardDeck {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  margin: 0.4rem;
+}
+
+#deckContainer section.showCardDeck .cnameD {
+  width: 86%;
+  margin: auto;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid orangered;
+  border-radius: 0.5rem;
+}
+
+#deckContainer section.showCardDeck .del-deck {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid black;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: #c23333;
+  line-height: 0.9rem;
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 800px) {
+  #deckContainer {
+    width: 30rem;
+    margin: auto;
+    margin-top: 6rem;
+  }
+}
+

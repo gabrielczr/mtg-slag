@@ -9,6 +9,7 @@
     <link rel='stylesheet' href="{{mix('/css/search.css')}}">
     <link rel='stylesheet' href="{{mix('/css/home.css')}}">
     <link rel='stylesheet' href="{{mix('/css/collection.css')}}">
+    <link rel='stylesheet' href="{{mix('/css/deck.css')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -71,7 +72,9 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-
+                            <a id='profileLink' class="dropdown-item" href="/profile">
+                               Profile
+                            </a>
 
                             @endguest
 
@@ -91,7 +94,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/collection">Collection</a>

@@ -65,8 +65,8 @@
                     @csrf
                     <div class="form-group">
 
-                      <input type="file" id="file" />
-                      <label for="file" />choose a file</label>
+                      <input name='avatar' type="file" id="file" />
+                      <label for="file" >choose a file</label>
 
 
                       <input class="menuButtons" type="file" name="avatar">
@@ -121,7 +121,7 @@
     <div class="deckList">
 
       <div class="customDeck">
-        <a href="#">Grixis</a><button type="button" class="close" data-dismiss="alert">×</button>
+        <a href="/deck">Grixis</a><button type="button" class="close" data-dismiss="alert">×</button>
       </div>
 
     </div>
