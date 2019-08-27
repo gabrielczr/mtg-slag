@@ -104,11 +104,6 @@ div.dropdown-menu.show {
     position: absolute;
   }
 
-  #pageContent {
-    width: 100%;
-    padding: 3rem;
-  }
-
   .navbar-nav {
     overflow: visible;
   }

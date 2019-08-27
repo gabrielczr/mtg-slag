@@ -48,7 +48,7 @@ class BlogController extends Controller
         $post->content = $request->content;
         $post->slug = $request->slug;
         
-        $imageName = request()->image->getClientOriginalExtension();
+        $imageName = request()->image->getClientOriginalName();
 
         $request->image->storeAs('images', $imageName);
 

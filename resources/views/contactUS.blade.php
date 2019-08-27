@@ -1,10 +1,7 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>Laravel 5.4 Cloudways Contact US Form Example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    </head>
-    <body>
+    @extends('layouts.app')
+    @section('title', 'Contact Us')
+    @section('content')
+
     <div class="container">
     <h1>Contact US Form</h1>
     @if(Session::has('success'))
@@ -33,5 +30,4 @@
     </div>
     {!! Form::close() !!}
     </div>
-    </body>
-    </html>
+    @endsection

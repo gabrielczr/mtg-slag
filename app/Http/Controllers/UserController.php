@@ -39,6 +39,7 @@ class UserController extends Controller
         $user = Auth::user();
         $posts = Post::where("user_id", "=", $user->id)->get();
         $cards = Card::where("user_id", "=", $user->id)->get();
+        $decks = Deck::where("user_id", "=", $user->id)->get();
         //return view('profile', compact('user', $user));
         return view('profile', compact('user', $user))->with('posts', $posts);
     }

@@ -4,33 +4,43 @@
 
 
 @section('content')
-<h1 id="newsTitle">Last News</h1>
+<div id='newsCreate'>
+    <h1 id="newsTitle">Latest News </h1>
 
-<a href="news/create">Add New</a>
 
+
+
+@if(Auth::check() && Auth::user()->type == 'admin')<a id='adminNews' href="news/create">Add New</a>@endif
 @foreach($posts as $post)
+</div>
 
 <!--class="{{$post->category}}"-->
 
 <div id="newsDiv">
+
+<div id="newsMain">
     <article id="newsArticle">
-        <img class="rounded-circle" src="/storage/images/{{ $post->image }}" />
-        <div>
-            {!!html_entity_decode($post->title)!!}
+		<div>
+        <img id="newsImage" width="100%" src="/storage/images/{{ $post->image }}" />
+		</div>
+        <div id='newsContent'>
+           <h2>{!!html_entity_decode($post->title)!!}</h2>
+           <p>{!!html_entity_decode($post->summary)!!} |
+           <a href="/post/show/{{$post->id}}"> Read more</a> |</p>
+
         </div>
-        <p>{!!html_entity_decode($post->summary)!!}</p>
+        
     </article>
 
-
-    <div id="newsLinks">
-        <!-- Show details of the new -->
-        <a href="/post/show/{{$post->id}}">| Read more</a> |
-        <!-- comment on this new -->
-        <a href="/post/{{$post->id}}/edit">Comment</a> |
-        <!-- share with contacts -->
-        <a href="/post/{{$post->id}}/edit">Share</a> |
-
     </div>
+    
+        <!-- Show details of the new -->
+        
+        <!-- comment on this new 
+        <a href="/post/{{$post->id}}/edit">Comment</a> |
+         share with contacts 
+        <a href="/post/{{$post->id}}/edit">Share</a> |-->
+
 </div>
 
 @endforeach

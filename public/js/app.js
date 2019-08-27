@@ -49749,14 +49749,14 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\search.scss */"./resources/sass/search.scss");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\general.scss */"./resources/sass/general.scss");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\news.scss */"./resources/sass/news.scss");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\home.scss */"./resources/sass/home.scss");
-__webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\collection.scss */"./resources/sass/collection.scss");
-module.exports = __webpack_require__(/*! C:\wamp64\www\fuckn\resources\sass\profile.scss */"./resources/sass/profile.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\search.scss */"./resources/sass/search.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\general.scss */"./resources/sass/general.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\news.scss */"./resources/sass/news.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\home.scss */"./resources/sass/home.scss");
+__webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\collection.scss */"./resources/sass/collection.scss");
+module.exports = __webpack_require__(/*! C:\wamp64\www\Magic Final Development\resources\sass\profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })

@@ -15,8 +15,9 @@
     @foreach($postsN as $post)
    
     <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" width="100%" src="/storage/images/{{ $post->image }}" alt="Card image cap">
       <div class="card-body">
+      
         <h5 class="card-title"> {!!html_entity_decode($post->title)!!}</h5>
         <p class="card-text">
           {!!html_entity_decode($post->summary)!!}
@@ -26,11 +27,11 @@
         <small class="text-muted">
           <div id="newsLinks">
             <!-- Show details of the new -->
-            <a href="/post/show/{{$post->id}}">| Read more</a> |
-            <!-- comment on this new -->
+            | <a href="/post/show/{{$post->id}}"> Read more</a> |
+            <!-- comment on this new 
             <a href="/post/{{$post->id}}/edit">Comment</a> |
-            <!-- share with contacts -->
-            <a href="/post/{{$post->id}}/edit">Share</a> |
+            share with contacts 
+            <a href="/post/{{$post->id}}/edit">Share</a> |-->
           </div>
         </small>
       </div>

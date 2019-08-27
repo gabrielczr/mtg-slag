@@ -116,7 +116,7 @@
                             <label for="rarity">Rarity:</label>
                             <select name='rarity'>
 
-                                <option value="" selected="true" disabled="abled"></option>
+                                <option value="" selected="true" disabled="disabled"></option>
                                 <option name="common" value="common">common</option>
                                 <option value="uncommon">uncommon</option>
                                 <option value="rare">rare</option>
@@ -176,7 +176,7 @@
 
                             <label for="creatureType">Creature type:</label>
                             <select name='creatureType'>
-                                <option value="" selected="true">
+                            <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                     @foreach($creatureTypes->data as $creatureType)
 
@@ -195,7 +195,7 @@
 
                             <label for="planeswalkerType">Planeswalker type:</label>
                             <select name='planeswalkerType'>
-                                <option value="" selected="true">
+                            <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                     @foreach($planeswalkerTypes->data as $planeswalkerType)
                                 <option value="{{ $planeswalkerType }}">{{ $planeswalkerType }}</option>
@@ -211,7 +211,7 @@
                             }             ?>
                             <label for="landType">Land type:</label>
                             <select name='landType'>
-                                <option value="" selected="true">
+                            <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                     @foreach($landTypes->data as $landType)
                                 <option value="{{ $landType }}">{{ $landType }}</option>
@@ -230,7 +230,7 @@
 
                             <label for="artifactType">Artifact type:</label>
                             <select name='artifactType'>
-                                <option value="" selected="true">
+                            <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                     @foreach($artifactTypes->data as $artifactType)
                                 <option value="{{ $artifactType }}">{{ $artifactType }}</option>
@@ -247,7 +247,7 @@
                             }             ?>
                             <label for="enchantmentType">Enchantment type:</label>
                             <select name='enchantmentType'>
-                                <option value="" selected="true">
+                            <option value="" selected="true" disabled="disabled">
                                     <!-- query to populate the type -->
                                     @foreach($enchantmentTypes->data as $enchantmentType)
                                 <option value="{{ $enchantmentType }}">{{ $enchantmentType }}</option>

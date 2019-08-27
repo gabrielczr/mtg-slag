@@ -10,8 +10,9 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-body">
+          <img id="newsImage" width="100%" src="/storage/images/{{ $post->image }}" />
           <p><b>{{ $post->title }}</b></p>
-          <p>{!!html_entity_decode($post->summary)!!}</p>
+          <p>{!!html_entity_decode($post->content)!!}</p>
           <hr />
           <h4>Display Comments</h4>
           @foreach($post->comments as $comment)
